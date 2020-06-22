@@ -69,7 +69,7 @@ public interface StudentRepository extends JpaRepository<Users, Integer> {
     List<ListStudentResult> ListStudents();
 
     @Modifying
-    @Query(value = "{ call InsertUpdateSocialNetworkStudent(:Id, :StudentId, :Url, :SociañNetworksNameId, 'Insert')}", nativeQuery = true)
+    @Query(value = "{ call InsertUpdateSocialNetworkStudent(:Id, :StudentId, :Url, :SocialNetworksNameId, 'Insert')}", nativeQuery = true)
     void addSocialNetwork(@Param("Id") Integer Id,
                     @Param("StudentId") Integer StudentId,
                     @Param("Url") String Url,

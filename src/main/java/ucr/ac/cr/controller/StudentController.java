@@ -1,7 +1,9 @@
 package ucr.ac.cr.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ucr.ac.cr.project.*;
 import ucr.ac.cr.service.StudentService;
@@ -10,6 +12,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class StudentController {
 
     @Autowired
@@ -31,8 +34,8 @@ public class StudentController {
         return service.ListAllStudents();
     }
 
-    @GetMapping("/getStudentById/{id}")
-    public GetStudentByIdResult getStudentById(int Id) { return service.getStudentById(Id); }
+    @GetMapping("/getStudentById")
+    public GetStudentByIdResult getStudentById(@RequestParam(value = "id") Integer id) { return service.getStudentById(id); }
 
     @GetMapping("/ListStudentApproval")
     public List<StudentApprovalResult> ListStudentApproval() { return service.ListStudentApproval(); }
