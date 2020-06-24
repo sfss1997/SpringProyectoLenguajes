@@ -60,7 +60,7 @@ public class StudentController {
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog() {return service.ListSocialNetworksCatalog();}
 
     @GetMapping("/GetSocialNetworksByIdStudent")
-    public List<GetSocialNetworksByIdStudentResult> GetSocialNetworksByIdStudent(int Id) {return service.GetSocialNetworksByIdStudent(Id);}
+    public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdStudent(int Id) {return service.GetSocialNetworksByIdStudent(Id);}
 
     @GetMapping("/UpdateImage")
     public void UpdateImage(String Image, int Id){ service.UpdateImage(Image,Id);}

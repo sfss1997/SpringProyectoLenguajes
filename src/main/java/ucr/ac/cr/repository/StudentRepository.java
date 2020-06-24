@@ -10,7 +10,7 @@ import ucr.ac.cr.project.*;
 import java.util.List;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Users, Integer> {
+public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     @Modifying
     @Query(value = "{ call InsertUpdateStudent(:Id, :Username, :Password, :IsAdministrator, :Status, :StudentCard, :StudentName, :LastName, :Birthday, :Mail, :Image, :RegistrationStatus, :ProvinceId, :CantonId, :DistrictId, 'Insert')}", nativeQuery = true)
@@ -85,7 +85,7 @@ public interface StudentRepository extends JpaRepository<Users, Integer> {
 
 
     @Query(value = "{call GetSocialNetworksByIdStudent(:Id)}", nativeQuery = true)
-    List<GetSocialNetworksByIdStudentResult> GetSocialNetworksByIdStudent(@Param("Id") Integer Id);
+    List<GetSocialNetworksByIdResult> GetSocialNetworksByIdStudent(@Param("Id") Integer Id);
 
 
     @Modifying

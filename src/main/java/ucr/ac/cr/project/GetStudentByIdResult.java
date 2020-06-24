@@ -1,25 +1,50 @@
 package ucr.ac.cr.project;
 
+import org.springframework.beans.factory.annotation.Value;
+
+import javax.persistence.*;
+
+@Entity
+
 public class GetStudentByIdResult {
 
-    private int Id;
+    @Id
+    @Column (name = "Id")
+    private Integer Id;
+    @Column (name = "StudentCard")
     private String StudentCard;
+    @Column (name = "StudentName")
     private String StudentName;
+    @Column (name = "LastName")
     private String LastName;
+    @Column (name = "Birthday")
     private String Birthday;
+    @Column (name = "Mail")
     private String Mail;
+    @Column (name = "Image")
     private String Image;
+    @Column (name = "RegistrationStatus")
     private String RegistrationStatus;
+    @Column (name = "Province")
     private String Province;
-    private int Province_id;
+    @Column (name = "Province_id")
+    private Integer Province_id;
+    @Column (name = "Canton")
     private String Canton;
-    private int Canton_id;
+    @Column (name = "Canton_id")
+    private Integer Canton_id;
+    @Column (name = "District")
     private String District;
-    private int District_id;
+    @Column (name = "District_id")
+    private Integer District_id;
+    @Column (name = "Username")
     private String Username;
+    @Column (name = "Password")
     private String Password;
+    @Column (name = "Status")
     private String Status;
-    private int Is_administrator;
+    @Column (name = "Is_administrator")
+    private Integer Is_administrator;
 
     public GetStudentByIdResult() {
     }
@@ -45,10 +70,10 @@ public class GetStudentByIdResult {
         Is_administrator = is_administrator;
     }
 
+    @Id
     public int getId() {
         return Id;
     }
-
     public void setId(int id) {
         Id = id;
     }

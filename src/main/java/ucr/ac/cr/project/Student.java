@@ -6,6 +6,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "Student")
 
+@NamedStoredProcedureQuery(name = "Student.getStudentById", procedureName = "GetStudentById")
 
 public class Student {
 

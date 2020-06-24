@@ -1,7 +1,6 @@
 package ucr.ac.cr.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import ucr.ac.cr.project.*;
 import ucr.ac.cr.repository.StudentRepository;
@@ -47,7 +46,7 @@ public class StudentService {
 
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog() {return repository.ListSocialNetworksCatalog();}
 
-    public List<GetSocialNetworksByIdStudentResult> GetSocialNetworksByIdStudent(int Id) {return repository.GetSocialNetworksByIdStudent(Id);}
+    public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdStudent(int Id) {return repository.GetSocialNetworksByIdStudent(Id);}
 
     public void UpdateImage(String Image, int Id){ repository.UpdateImage(Image,Id);}
 

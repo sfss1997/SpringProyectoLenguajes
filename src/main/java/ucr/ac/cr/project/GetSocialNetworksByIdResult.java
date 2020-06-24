@@ -1,15 +1,15 @@
 package ucr.ac.cr.project;
 
-public class GetSocialNetworksByIdStudentResult {
+public class GetSocialNetworksByIdResult {
 
     private int Id;
     private String Url;
     private int SocialNetworksName_id;
 
-    public GetSocialNetworksByIdStudentResult() {
+    public GetSocialNetworksByIdResult() {
     }
 
-    public GetSocialNetworksByIdStudentResult(int id, String url, int socialNetworksName_id) {
+    public GetSocialNetworksByIdResult(int id, String url, int socialNetworksName_id) {
         Id = id;
         Url = url;
         SocialNetworksName_id = socialNetworksName_id;
