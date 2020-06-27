@@ -16,6 +16,7 @@ public class Location {
         Name = name;
     }
 
+    @Id
     public int getId() {
         return Id;
     }

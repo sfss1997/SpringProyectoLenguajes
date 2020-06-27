@@ -20,12 +20,15 @@ public class LocationController {
     @Autowired
     private LocationService service;
 
-    @GetMapping("/ListAllProvinces")
+    //YAAA
+    @GetMapping("/Location/ListAllProvinces")
     public List<Location> ListAllProvinces(){return  service.ListAllProvinces();}
 
-    @GetMapping("/GetCantonsByIdProvince")
+    //YAAA
+    @GetMapping("/Location/GetCantonsByIdProvince")
     public List<Location> GetCantonsByIdProvince(@RequestParam(value = "id") Integer Id){return service.GetCantonsByIdProvince(Id);}
 
-    @GetMapping("/GetDistrictsByIdCanton")
+    //YAAA
+    @GetMapping("/Location/GetDistrictsByIdCanton")
     public List<Location> GetDistrictsByIdCanton(@RequestParam(value = "id") Integer Id){return service.GetDistrictsByIdCanton(Id);}
 }

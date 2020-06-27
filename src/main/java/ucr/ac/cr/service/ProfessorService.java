@@ -15,13 +15,9 @@ public class ProfessorService {
     @Autowired
     private ProfessorRepository repository;
 
-    public void AddProfessor(int Id,String Username,String Password,int IsAdministrator,String Status,
-                      String Name,String LastName, String Mail,String Image,int ProvinceId,int CantonId,
-                             int DistrictId,int AcademicDegree){repository.addProfessor(Id,Username,Password,IsAdministrator,Status,Name,LastName,Mail,Image,ProvinceId,CantonId,DistrictId,AcademicDegree);}
+    public void AddProfessor(ProfessorDAO Professor){repository.addProfessor(Professor.getId(),Professor.getUsername(),Professor.getPassword(),Professor.getIsAdministrator(),Professor.getStatus(),Professor.getName(),Professor.getLastName(),Professor.getMail(),Professor.getImage(),Professor.getProvinceId(),Professor.getCantonId(),Professor.getDistrictId(),Professor.getAcademicDegree());}
 
-    public void UpdateProfessor(int Id,String Username,String Password,int IsAdministrator,String Status,
-                             String Name,String LastName, String Mail,String Image,int ProvinceId,int CantonId,
-                             int DistrictId,int AcademicDegree){repository.UpdateProfessor(Id,Username,Password,IsAdministrator,Status,Name,LastName,Mail,Image,ProvinceId,CantonId,DistrictId,AcademicDegree);}
+    public void UpdateProfessor(ProfessorDAO Professor){repository.UpdateProfessor(Professor.getId(),Professor.getUsername(),Professor.getPassword(),Professor.getIsAdministrator(),Professor.getStatus(),Professor.getName(),Professor.getLastName(),Professor.getMail(),Professor.getImage(),Professor.getProvinceId(),Professor.getCantonId(),Professor.getDistrictId(),Professor.getAcademicDegree());}
 
     public List<SelectProfessorResult> ListAllProfessors(){return repository.ListAllProfessors();}
 
@@ -31,13 +27,13 @@ public class ProfessorService {
 
     public List<SelectAcademicDegreeResult> ListAcademicDegree(){return  repository.ListAcademicDegree();}
 
-    public void addSocialNetwork(int Id, int StudentId,String Url,int SocialNetworksNameId){repository.addSocialNetwork(Id,StudentId,Url,SocialNetworksNameId);}
+    public void addSocialNetwork(SocialNetworkDAO SocialNetwork){repository.addSocialNetwork(SocialNetwork.getId(),SocialNetwork.getUserId(),SocialNetwork.getUrl(),SocialNetwork.getSocialNetworksNameId());}
 
-    public void AddProfessorCourse(int ProfessorId, int CourseId){repository.AddProfessorCourse(ProfessorId,CourseId);}
+    public void AddProfessorCourse(UserCourseDAO ProfessorCourse){repository.AddProfessorCourse(ProfessorCourse.getUserId(),ProfessorCourse.getCourseId());}
 
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog(){return repository.ListSocialNetworksCatalog();}
 
     public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdProfessor(int Id){return repository.GetSocialNetworksByIdProfessor(Id);}
 
-    public void UpdateImage(String Image,int Id){repository.UpdateImage(Image,Id);}
+    public void UpdateImage(ImageDAO Image){repository.UpdateImage(Image.getImage(),Image.getId());}
 }
