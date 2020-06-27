@@ -27,17 +27,17 @@ public class ProfessorController {
     @GetMapping("/Professor/Delete")
     public void DeleteProfessor(@RequestParam(value = "id") Integer Id){service.DeleteProfessor(Id);}
 
-
+    //YAAA
     @GetMapping("/Professor/addSocialNetwork")
     public void addSocialNetwork(@RequestBody SocialNetworkDAO SocialNetwork){service.addSocialNetwork(SocialNetwork);}
 
+    //YAAA
     @GetMapping("/Professor/AddCourse")
     public void AddProfessorCourse(@RequestBody UserCourseDAO ProfessorCourse){service.AddProfessorCourse(ProfessorCourse);}
 
+    //YAAA
     @GetMapping("/Professor/UpdateImage")
     public void UpdateImage(@RequestBody ImageDAO Image){service.UpdateImage(Image);}
-
-
 
 
     @GetMapping("/Professor/ListAll")
