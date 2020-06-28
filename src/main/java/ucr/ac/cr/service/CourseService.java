@@ -2,12 +2,9 @@ package ucr.ac.cr.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import ucr.ac.cr.project.*;
-import ucr.ac.cr.repository.CourseRepository;
+import ucr.ac.cr.repository.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -17,67 +14,81 @@ import java.util.List;
 public class CourseService {
 
     @Autowired
-    private CourseRepository repository;
+    private CourseRepository courseRepository;
+    private ProfessorCourseRepository professorCourseRepository;
+    private ProfessorCoursesRepository professorCoursesRepository;
+    private PublicConsultationRepository publicConsultationRepository;
+    private PrivateMessageRepository privateMessageRepository;
+    private RepliesPublicConsultationRepository repliesPublicConsultationRepository;
+    private RepliesPrivateMessageRepository repliesPrivateMessageRepository;
+    private AppointmentRepository appointmentRepository;
 
-    public void AddCourse(CourseDAO course){repository.AddCourse(course.getId(),course.getInitials(),course.getName(),course.getIsActive(),course.getCredits(),course.getCycle());}
-
-
-    public void UpdateCourse(CourseDAO course){repository.UpdateCourse(course.getId(),course.getInitials(),course.getName(),course.getIsActive(),course.getCredits(),course.getCycle());}
-
-
-    public Course getCourseById(Integer Id){return repository.getCourseById(Id);}
-
-
-    public List<Course> ListAllCourses(){return repository.ListAllCourses();}
-
-
-    public void DeleteCourse(Integer Id){repository.DeleteCourse(Id);}
+    public void AddCourse(CourseDAO course){
+        courseRepository.AddCourse(course.getId(),course.getInitials(),course.getName(),course.getIsActive(),course.getCredits(),course.getCycle());}
 
 
-    public List<GetStudentCoursesResult> GetStudentCourses(Integer Id){return repository.GetStudentCourses(Id);}
+    public void UpdateCourse(CourseDAO course){
+        courseRepository.UpdateCourse(course.getId(),course.getInitials(),course.getName(),course.getIsActive(),course.getCredits(),course.getCycle());}
 
 
-    public List<GetProfessorCoursesResult> GetProfessorCourses(Integer Id){return repository.GetProfessorCourses(Id);}
+    public Course getCourseById(Integer Id){return courseRepository.getCourseById(Id);}
 
 
-    public GetProfessorByIdCourseResult GetProfessorByIdCourse(Integer Id){return repository.GetProfessorByIdCourse(Id);}
+    public List<Course> ListAllCourses(){return courseRepository.ListAllCourses();}
 
 
-    public void AddPublicConsultation(PublicConsultationDAO PublicConsultation){  repository.AddPublicConsultation(PublicConsultation.getCourseId(),PublicConsultation.getStudentId(),PublicConsultation.getProfessorId(),PublicConsultation.getMotive(),PublicConsultation.getDateTime());}
+    public void DeleteCourse(Integer Id){
+        courseRepository.DeleteCourse(Id);}
 
 
-    public void AddPrivateMessage(PrivateMessageDAO PrivateMessage ){repository.AddPrivateMessage(PrivateMessage.getCourseId(),PrivateMessage.getStudentId(),PrivateMessage.getProfessorId(),PrivateMessage.getMotive(), PrivateMessage.getDateTime());}
+    public List<GetStudentCoursesResult> GetStudentCourses(Integer Id){return courseRepository.GetStudentCourses(Id);}
 
 
-    public List<GetPublicConsultationResult> GetPublicConsultation(GetPublicConsultationDAO PublicConsultation){return repository.GetPublicConsultation(PublicConsultation.getCourseId(), PublicConsultation.getProfessorId());}
+    public List<GetProfessorCoursesResult> GetProfessorCourses(Integer Id){return professorCoursesRepository.GetProfessorCourses(Id);}
 
 
-    public List<GetPrivateMessageResult> GetPrivateMessage(GetPrivateMessageDAO PrivateMessage){return repository.GetPrivateMessage(PrivateMessage.getCourseId(),PrivateMessage.getProfessorId());}
+    public GetProfessorByIdCourseResult GetProfessorByIdCourse(Integer Id){return professorCourseRepository.GetProfessorByIdCourse(Id);}
 
 
-    public void AddRepliesPublicConsultation(AddRepliesPublicConsultationDAO Replies){repository.AddRepliesPublicConsultation(Replies.getPublicConsultationId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
+    public void AddPublicConsultation(PublicConsultationDAO PublicConsultation){  courseRepository.AddPublicConsultation(PublicConsultation.getCourseId(),PublicConsultation.getStudentId(),PublicConsultation.getProfessorId(),PublicConsultation.getMotive(),PublicConsultation.getDateTime());}
 
 
-    public List<GetRepliesPublicConsultation> GetRepliesPublicConsultation(Integer PublicConsultationId){return repository.GetRepliesPublicConsultation(PublicConsultationId);}
+    public void AddPrivateMessage(PrivateMessageDAO PrivateMessage ){
+        courseRepository.AddPrivateMessage(PrivateMessage.getCourseId(),PrivateMessage.getStudentId(),PrivateMessage.getProfessorId(),PrivateMessage.getMotive(), PrivateMessage.getDateTime());}
+
+
+    public List<GetPublicConsultationResult> GetPublicConsultation(GetPublicConsultationDAO PublicConsultation){return publicConsultationRepository.GetPublicConsultation(PublicConsultation.getCourseId(), PublicConsultation.getProfessorId());}
+
+
+    public List<GetPrivateMessageResult> GetPrivateMessage(GetPrivateMessageDAO PrivateMessage){return privateMessageRepository.GetPrivateMessage(PrivateMessage.getCourseId(),PrivateMessage.getProfessorId());}
+
+
+    public void AddRepliesPublicConsultation(AddRepliesPublicConsultationDAO Replies){
+        courseRepository.AddRepliesPublicConsultation(Replies.getPublicConsultationId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
+
+
+    public List<GetRepliesPublicConsultation> GetRepliesPublicConsultation(Integer PublicConsultationId){return repliesPublicConsultationRepository.GetRepliesPublicConsultation(PublicConsultationId);}
 
 
 
-    public void AddRepliesPrivateMessage(AddRepliesPrivateMessageDAO Replies){repository.AddRepliesPrivateMessage(Replies.getPrivateMessageId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
+    public void AddRepliesPrivateMessage(AddRepliesPrivateMessageDAO Replies){
+        courseRepository.AddRepliesPrivateMessage(Replies.getPrivateMessageId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
 
-    public List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(Integer Id){return repository.GetRepliesPrivateMessage(Id);}
-
-
-    public void AddAppointment(AppointmentDAO Appointment){repository.AddAppointment(Appointment.getCourseId(),Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getMotive(),Appointment.getAccepted(),Appointment.getDateTime());}
+    public List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(Integer Id){return repliesPrivateMessageRepository.GetRepliesPrivateMessage(Id);}
 
 
-    public void UpdateStatusAppointment(StatusAppointmentDAO Status){ repository.UpdateStatusAppointment(Status.getAppointmentId(),Status.getAccepted());}
+    public void AddAppointment(AppointmentDAO Appointment){
+        courseRepository.AddAppointment(Appointment.getCourseId(),Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getMotive(),Appointment.getAccepted(),Appointment.getDateTime());}
 
 
-    public List<GetAppointmentResult> GetAppointment(GetAppointmentDAO Appointment){return repository.GetAppointment(Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getPublicConsultationId());}
+    public void UpdateStatusAppointment(StatusAppointmentDAO Status){ courseRepository.UpdateStatusAppointment(Status.getAppointmentId(),Status.getAccepted());}
 
 
-    public List<GetAppointmentResult> GetAppointmentById(Integer Id){return repository.GetAppointmentById(Id);}
+    public List<GetAppointmentResult> GetAppointment(GetAppointmentDAO Appointment){return appointmentRepository.GetAppointment(Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getPublicConsultationId());}
 
 
-    public List<GetAppointmentResult> GetAppointmentProfessor(GetAppointmentProfessorDAO AppointmentProfessor){return repository.GetAppointmentProfessor(AppointmentProfessor.getProfessorId(),AppointmentProfessor.getPublicConsultationId());}
+    public List<GetAppointmentResult> GetAppointmentById(Integer Id){return appointmentRepository.GetAppointmentById(Id);}
+
+
+    public List<GetAppointmentResult> GetAppointmentProfessor(GetAppointmentProfessorDAO AppointmentProfessor){return appointmentRepository.GetAppointmentProfessor(AppointmentProfessor.getProfessorId(),AppointmentProfessor.getPublicConsultationId());}
 }
