@@ -1,18 +1,26 @@
 package ucr.ac.cr.project;
+import javax.persistence.*;
 
-public class GetRepliesPublicConsultation {
+@Entity
+public class GetRepliesPublicConsultationResult {
 
+    @Column (name = "Id")
     private int Id;
+    @Column (name = "PublicConsultation_id")
     private int PublicConsultation_id;
+    @Column (name = "Student_id")
     private int Student_id;
+    @Column (name = "DateTime")
     private String DateTime;
+    @Column (name = "Motive")
     private String Motive;
+    @Column (name = "Professor_id")
     private int Professor_id;
 
-    public GetRepliesPublicConsultation() {
+    public GetRepliesPublicConsultationResult() {
     }
 
-    public GetRepliesPublicConsultation(int id, int publicConsultation_id, int student_id, String dateTime, String motive, int professor_id) {
+    public GetRepliesPublicConsultationResult(int id, int publicConsultation_id, int student_id, String dateTime, String motive, int professor_id) {
         Id = id;
         PublicConsultation_id = publicConsultation_id;
         Student_id = student_id;
@@ -20,7 +28,7 @@ public class GetRepliesPublicConsultation {
         Motive = motive;
         Professor_id = professor_id;
     }
-
+    @Id
     public int getId() {
         return Id;
     }

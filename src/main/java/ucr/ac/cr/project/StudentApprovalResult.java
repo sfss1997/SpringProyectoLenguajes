@@ -1,11 +1,19 @@
 package ucr.ac.cr.project;
 
+import javax.persistence.*;
+
+@Entity
 public class StudentApprovalResult {
 
+    @Column (name = "Id")
     private int Id;
+    @Column (name = "Student_card")
     private String Student_card;
+    @Column (name = "Student_name")
     private String Student_name;
+    @Column (name = "Last_name")
     private String Last_name;
+    @Column (name = "Mail")
     private String Mail;
 
     public StudentApprovalResult() {
@@ -19,6 +27,7 @@ public class StudentApprovalResult {
         Mail = mail;
     }
 
+    @Id
     public int getId() {
         return Id;
     }

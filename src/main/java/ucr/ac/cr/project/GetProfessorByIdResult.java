@@ -5,22 +5,39 @@ import javax.persistence.*;
 @Entity
 
 public class GetProfessorByIdResult {
+    @Column (name = "Id")
     public Integer Id;
+    @Column (name = "Name")
     public String Name;
+    @Column (name = "LastName")
     public String LastName;
+    @Column (name = "Mail")
     public String Mail;
+    @Column (name = "Image")
     public String Image;
+    @Column (name = "AcademicDegree")
     public String AcademicDegree;
+    @Column (name = "AcademicDegreeId")
     public Integer AcademicDegreeId;
+    @Column (name = "Province")
     public String Province;
+    @Column (name = "ProvinceId")
     public Integer ProvinceId;
+    @Column (name = "Canton")
     public String Canton;
+    @Column (name = "CantonId")
     public Integer CantonId;
+    @Column (name = "District")
     public String District;
+    @Column (name = "DistrictId")
     public Integer DistrictId;
+    @Column (name = "Username")
     public String Username;
+    @Column (name = "Password")
     public String Password;
+    @Column (name = "IsAdministrator")
     public Integer IsAdministrator;
+    @Column (name = "Status")
     public String Status;
 
     public GetProfessorByIdResult() {

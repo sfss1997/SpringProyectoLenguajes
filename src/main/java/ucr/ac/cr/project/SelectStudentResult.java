@@ -1,19 +1,35 @@
 package ucr.ac.cr.project;
 
+import javax.persistence.*;
+
+@Entity
 public class SelectStudentResult {
 
+    @Column (name = "Id")
     private int Id;
+    @Column (name = "StudentCard")
     private String StudentCard;
+    @Column (name = "StudentName")
     private String StudentName;
+    @Column (name = "LastName")
     private String LastName;
+    @Column (name = "Birthday")
     private String Birthday;
+    @Column (name = "Mail")
     private String Mail;
+    @Column (name = "Image")
     private String Image;
+    @Column (name = "RegistrationStatus")
     private String RegistrationStatus;
+    @Column (name = "Province")
     private String Province;
+    @Column (name = "Canton")
     private String Canton;
+    @Column (name = "District")
     private String District;
+    @Column (name = "Status")
     private String Status;
+    @Column (name = "Is_Administrator")
     private int Is_Administrator;
 
     public SelectStudentResult() {
@@ -35,6 +51,7 @@ public class SelectStudentResult {
         Is_Administrator = is_Administrator;
     }
 
+    @Id
     public int getId() {
         return Id;
     }

@@ -14,11 +14,17 @@ public class StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+    @Autowired
     private AllStudentsRepository allStudentRepository;
+    @Autowired
     private StudentByIdRepository studentByIdRepository;
+    @Autowired
     private StudentApprovalRepository studentApprovalRepository;
+    @Autowired
     private ListStudentsRepository listStudentsRepository;
+    @Autowired
     private SocialNetworkCatalogRepository socialNetworkCatalogRepository;
+    @Autowired
     private SocialNetworksStudentRepository socialNetworksStudentRepository;
 
     public void AddStudent(StudentDAO student){ studentRepository.addStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}

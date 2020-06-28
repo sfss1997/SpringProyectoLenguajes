@@ -15,13 +15,21 @@ public class CourseService {
 
     @Autowired
     private CourseRepository courseRepository;
+    @Autowired
     private StudentCoursesRepository studentCoursesRepository;
+    @Autowired
     private ProfessorCourseRepository professorCourseRepository;
+    @Autowired
     private ProfessorCoursesRepository professorCoursesRepository;
+    @Autowired
     private PublicConsultationRepository publicConsultationRepository;
+    @Autowired
     private PrivateMessageRepository privateMessageRepository;
+    @Autowired
     private RepliesPublicConsultationRepository repliesPublicConsultationRepository;
+    @Autowired
     private RepliesPrivateMessageRepository repliesPrivateMessageRepository;
+    @Autowired
     private AppointmentRepository appointmentRepository;
 
     public void AddCourse(CourseDAO course){
@@ -68,7 +76,7 @@ public class CourseService {
         courseRepository.AddRepliesPublicConsultation(Replies.getPublicConsultationId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
 
 
-    public List<GetRepliesPublicConsultation> GetRepliesPublicConsultation(Integer PublicConsultationId){return repliesPublicConsultationRepository.GetRepliesPublicConsultation(PublicConsultationId);}
+    public List<GetRepliesPublicConsultationResult> GetRepliesPublicConsultation(Integer PublicConsultationId){return repliesPublicConsultationRepository.GetRepliesPublicConsultation(PublicConsultationId);}
 
 
 

@@ -13,10 +13,15 @@ import java.util.List;
 public class ProfessorService {
     @Autowired
     private ProfessorRepository professorRepository;
+    @Autowired
     private ListProfessorsRepository listProfessorsRepository;
+    @Autowired
     private ProfessorByIdRepository professorByIdRepository;
+    @Autowired
     private AcademicDegreeRepository academicDegreeRepository;
+    @Autowired
     private SocialNetworkCatalogRepository socialNetworkCatalogRepository;
+    @Autowired
     private SocialNetworksProfessorRepository socialNetworksProfessorRepository;
 
     public void AddProfessor(ProfessorDAO Professor){

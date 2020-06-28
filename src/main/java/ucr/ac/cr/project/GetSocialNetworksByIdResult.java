@@ -1,9 +1,13 @@
 package ucr.ac.cr.project;
+import javax.persistence.*;
 
+@Entity
 public class GetSocialNetworksByIdResult {
-
+    @Column (name = "Id")
     private int Id;
+    @Column (name = "Url")
     private String Url;
+    @Column (name = "SocialNetworksName_id")
     private int SocialNetworksName_id;
 
     public GetSocialNetworksByIdResult() {
@@ -15,6 +19,7 @@ public class GetSocialNetworksByIdResult {
         SocialNetworksName_id = socialNetworksName_id;
     }
 
+    @Id
     public int getId() {
         return Id;
     }

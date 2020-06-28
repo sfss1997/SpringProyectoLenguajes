@@ -1,12 +1,21 @@
 package ucr.ac.cr.project;
 
+import javax.persistence.*;
+
+@Entity
 public class GetPublicConsultationResult {
 
+    @Column (name = "Id")
     public int Id;
+    @Column (name = "Course_id")
     public int Course_id;
+    @Column (name = "Student_id")
     public int Student_id;
+    @Column (name = "DateTime")
     public String DateTime;
+    @Column (name = "Motive")
     public String Motive;
+    @Column (name = "Professor_id")
     public int Professor_id;
 
     public GetPublicConsultationResult() {
@@ -20,7 +29,7 @@ public class GetPublicConsultationResult {
         Motive = motive;
         Professor_id = professor_id;
     }
-
+    @Id
     public int getId() {
         return Id;
     }

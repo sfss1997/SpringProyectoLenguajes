@@ -1,14 +1,25 @@
 package ucr.ac.cr.project;
+import javax.persistence.*;
 
+@Entity
 public class GetStudentCoursesResult {
+    @Column (name = "Student_id")
     private int Student_id;
+    @Column (name = "Initials")
     private String Initials;
+    @Column (name = "Course_id")
     private int Course_id;
+    @Column (name = "CourseName")
     private String CourseName;
+    @Column (name = "Credits")
     private int Credits;
+    @Column (name = "Cycle")
     private int Cycle;
+    @Column (name = "Professor_id")
     private int Professor_id;
+    @Column (name = "Professor_name")
     private String Professor_name;
+    @Column (name = "Professor_lastname")
     private String Professor_lastname;
 
     public GetStudentCoursesResult() {
@@ -26,6 +37,7 @@ public class GetStudentCoursesResult {
         Professor_lastname = professor_lastname;
     }
 
+    @Id
     public int getStudent_id() {
         return Student_id;
     }

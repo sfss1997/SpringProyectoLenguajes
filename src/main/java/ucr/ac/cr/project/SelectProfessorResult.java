@@ -6,14 +6,23 @@ import javax.persistence.*;
 @Entity
 public class SelectProfessorResult {
 
+    @Column (name = "Id")
     private Integer Id;
+    @Column (name = "Name")
     private String Name;
+    @Column (name = "Last_name")
     private String Last_name;
+    @Column (name = "Mail")
     private String Mail;
+    @Column (name = "Image")
     private String Image;
+    @Column (name = "AcademicDegree")
     private String AcademicDegree;
+    @Column (name = "Province")
     private String Province;
+    @Column (name = "Canton")
     private String Canton;
+    @Column (name = "District")
     private String District;
 
     public SelectProfessorResult() {

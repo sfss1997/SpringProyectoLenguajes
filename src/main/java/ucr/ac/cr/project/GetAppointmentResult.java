@@ -1,13 +1,23 @@
 package ucr.ac.cr.project;
 
+import javax.persistence.*;
+
+@Entity
 public class GetAppointmentResult {
 
+    @Column (name = "Id")
     private int Id;
+    @Column (name = "Course_id")
     private int Course_id;
+    @Column (name = "Student_id")
     private int Student_id;
+    @Column (name = "DateTime")
     private String DateTime;
+    @Column (name = "Motive")
     private String  Motive;
+    @Column (name = "Professor_id")
     private int Professor_id;
+    @Column (name = "Accepted")
     private int Accepted;
 
     public GetAppointmentResult() {
@@ -23,6 +33,7 @@ public class GetAppointmentResult {
         Accepted = accepted;
     }
 
+    @Id
     public int getId() {
         return Id;
     }

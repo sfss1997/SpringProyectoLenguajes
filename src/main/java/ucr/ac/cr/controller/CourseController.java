@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ucr.ac.cr.project.*;
 import ucr.ac.cr.service.CourseService;
-import ucr.ac.cr.service.ProfessorService;
 
 
 import java.util.List;
@@ -70,7 +69,7 @@ public class CourseController {
 
     //falta este
     @GetMapping("/Course/GetRepliesPublicConsultation")
-    public List<GetRepliesPublicConsultation> GetRepliesPublicConsultation(@RequestParam(value = "id")Integer PublicConsultationId){return service.GetRepliesPublicConsultation(PublicConsultationId);}
+    public List<GetRepliesPublicConsultationResult> GetRepliesPublicConsultation(@RequestParam(value = "id")Integer PublicConsultationId){return service.GetRepliesPublicConsultation(PublicConsultationId);}
 
     //falta este
     @GetMapping("/Course/GetRepliesPrivateMessage")

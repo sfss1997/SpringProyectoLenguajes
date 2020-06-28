@@ -5,7 +5,9 @@ import javax.persistence.*;
 @Entity
 public class SelectAcademicDegreeResult {
 
+    @Column (name = "Id")
     public Integer Id;
+    @Column (name = "Name")
     public String Name;
 
     public SelectAcademicDegreeResult() {

@@ -99,7 +99,7 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
 
 
     @Query(value = "{call GetRepliesPublicConsultation(:PublicConsultationId)}", nativeQuery = true)
-    List<GetRepliesPublicConsultation> GetRepliesPublicConsultation(@Param("PublicConsultationId") Integer PublicConsultationId);
+    List<GetRepliesPublicConsultationResult> GetRepliesPublicConsultation(@Param("PublicConsultationId") Integer PublicConsultationId);
 
 
 
