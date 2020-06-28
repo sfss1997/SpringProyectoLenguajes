@@ -15,6 +15,7 @@ public class CourseService {
 
     @Autowired
     private CourseRepository courseRepository;
+    private StudentCoursesRepository studentCoursesRepository;
     private ProfessorCourseRepository professorCourseRepository;
     private ProfessorCoursesRepository professorCoursesRepository;
     private PublicConsultationRepository publicConsultationRepository;
@@ -41,7 +42,7 @@ public class CourseService {
         courseRepository.DeleteCourse(Id);}
 
 
-    public List<GetStudentCoursesResult> GetStudentCourses(Integer Id){return courseRepository.GetStudentCourses(Id);}
+    public List<GetStudentCoursesResult> GetStudentCourses(Integer Id){return studentCoursesRepository.GetStudentCourses(Id);}
 
 
     public List<GetProfessorCoursesResult> GetProfessorCourses(Integer Id){return professorCoursesRepository.GetProfessorCourses(Id);}
