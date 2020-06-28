@@ -9,60 +9,58 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class StudentController {
 
     @Autowired
     private StudentService service;
 
-    //YAAA
     @RequestMapping(path = "/Student/Add", method = RequestMethod.POST)
     public void AddStudent(@RequestBody StudentDAO student){ service.AddStudent(student);}
 
-    //YAAA
-    @RequestMapping(path = "/Student/Update", method = RequestMethod.POST)
+    @RequestMapping(path = "/Student/Update", method = RequestMethod.PUT)
     public void UpdateStudent(@RequestBody StudentDAO student){ service.UpdateStudent(student);}
 
-    //YAAA
-    @GetMapping("/Student/Delete")
+    @DeleteMapping("/Student/Delete")
     public void DeleteStudent(@RequestParam(value = "id") Integer Id){ service.DeleteStudent(Id);}
 
-    //YAAA
-    @GetMapping("/Student/AddCourse")
+    @PostMapping("/Student/AddCourse")
     public void AddStudentCourse(@RequestBody UserCourseDAO StudentCourse) {service.AddStudentCourse(StudentCourse);}
 
-    //YAAA
-    @GetMapping("/Student/UpdateImage")
+    @PutMapping("/Student/UpdateImage")
     public void UpdateImage(@RequestBody ImageDAO Image){ service.UpdateImage(Image);}
 
-    //YAAA
-    @GetMapping("/Student/AddSocialNetwork")
-    public void AddSocialNetwork(SocialNetworkDAO SocialNetwork)
+    @PostMapping("/Student/AddSocialNetwork")
+    public void AddSocialNetwork(@RequestBody SocialNetworkDAO SocialNetwork)
     {service.addSocialNetwork(SocialNetwork);}
 
-    //YAAA
-    @GetMapping("/Student/UpdateStatus")
+    @PutMapping("/Student/UpdateStatus")
     public void UpdateStudentStatus(@RequestBody StudentStatusDAO StudentStatus){ service.UpdateStudentStatus(StudentStatus);}
 
 
-
+    //falta
     @GetMapping("/Student/ListAll")
     public List<SelectStudentResult> ListAllStudents() {
         return service.ListAllStudents();
     }
 
+    //falta
     @GetMapping("/Student/getById")
     public GetStudentByIdResult getStudentById(@RequestParam(value = "id") Integer id) { return service.getStudentById(id); }
 
+    //falta
     @GetMapping("/Student/ListApproval")
     public List<StudentApprovalResult> ListStudentApproval() { return service.ListStudentApproval(); }
 
+    //falta
     @GetMapping("/Student/List")
     public List<ListStudentResult> ListStudents() { return service.ListStudents(); }
 
+    //falta
     @GetMapping("/Student/ListSocialNetworksCatalog")
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog() {return service.ListSocialNetworksCatalog();}
 
+    //falta
     @GetMapping("/Student/GetSocialNetworksById")
     public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdStudent(int Id) {return service.GetSocialNetworksByIdStudent(Id);}
 

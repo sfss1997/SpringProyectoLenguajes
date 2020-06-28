@@ -27,7 +27,7 @@ public class ProfessorService {
 
     public List<SelectAcademicDegreeResult> ListAcademicDegree(){return  repository.ListAcademicDegree();}
 
-    public void addSocialNetwork(SocialNetworkDAO SocialNetwork){repository.addSocialNetwork(SocialNetwork.getId(),SocialNetwork.getUserId(),SocialNetwork.getUrl(),SocialNetwork.getSocialNetworksNameId());}
+    public void addSocialNetwork(SocialNetworkDAO SocialNetwork){repository.AddSocialNetwork(SocialNetwork.getId(),SocialNetwork.getUserId(),SocialNetwork.getUrl(),SocialNetwork.getSocialNetworksNameId());}
 
     public void AddProfessorCourse(UserCourseDAO ProfessorCourse){repository.AddProfessorCourse(ProfessorCourse.getUserId(),ProfessorCourse.getCourseId());}
 

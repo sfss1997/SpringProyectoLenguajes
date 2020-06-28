@@ -2,7 +2,7 @@ package ucr.ac.cr.project;
 
 public class AddRepliesPrivateMessageDAO {
 
-    public int PublicConsultationId;
+    public int PrivateMessageId;
     public int StudentId;
     public int ProfessorId;
     public String Motive;
@@ -11,20 +11,20 @@ public class AddRepliesPrivateMessageDAO {
     public AddRepliesPrivateMessageDAO() {
     }
 
-    public AddRepliesPrivateMessageDAO(int publicConsultationId, int studentId, int professorId, String motive, String dateTime) {
-        PublicConsultationId = publicConsultationId;
+    public AddRepliesPrivateMessageDAO(int privateMessageId, int studentId, int professorId, String motive, String dateTime) {
+        PrivateMessageId = privateMessageId;
         StudentId = studentId;
         ProfessorId = professorId;
         Motive = motive;
         DateTime = dateTime;
     }
 
-    public int getPublicConsultationId() {
-        return PublicConsultationId;
+    public int getPrivateMessageId() {
+        return PrivateMessageId;
     }
 
-    public void setPublicConsultationId(int publicConsultationId) {
-        PublicConsultationId = publicConsultationId;
+    public void setPrivateMessageId(int privateMessageId) {
+        PrivateMessageId = privateMessageId;
     }
 
     public int getStudentId() {

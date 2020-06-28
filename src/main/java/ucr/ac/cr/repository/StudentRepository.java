@@ -59,7 +59,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     @Modifying
     @Query(value = "{call UpdateStatusStudent(:Id, :RegistrationStatus)}", nativeQuery = true)
-    void UpdateStudentStatus(@Param("Id") Integer Id, @Param("RegistrationStatus") Integer RegistrationStatus);
+    void UpdateStudentStatus(@Param("Id") Integer Id, @Param("RegistrationStatus") String RegistrationStatus);
 
     @Modifying
     @Query(value = "{ call DeleteStudent(:Id)}", nativeQuery = true)
@@ -74,6 +74,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
                     @Param("StudentId") Integer StudentId,
                     @Param("Url") String Url,
                           @Param("SocialNetworksNameId") Integer SocialNetworksNameId);
+
 
     @Modifying
     @Query(value = "{call InsertStudentCourse(:StudentId, :CourseId)}", nativeQuery = true)

@@ -62,7 +62,7 @@ public class CourseService {
 
 
 
-    public void AddRepliesPrivateMessage(AddRepliesPrivateMessageDAO Replies){repository.AddRepliesPrivateMessage(Replies.getPublicConsultationId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
+    public void AddRepliesPrivateMessage(AddRepliesPrivateMessageDAO Replies){repository.AddRepliesPrivateMessage(Replies.getPrivateMessageId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
 
     public List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(Integer Id){return repository.GetRepliesPrivateMessage(Id);}
 

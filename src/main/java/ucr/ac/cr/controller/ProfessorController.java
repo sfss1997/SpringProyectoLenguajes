@@ -9,51 +9,49 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class ProfessorController {
 
     @Autowired
     private ProfessorService service;
 
-    //YAAA
-    @GetMapping("/Professor/Add")
+    @PostMapping("/Professor/Add")
     public void AddProfessor(@RequestBody ProfessorDAO Professor){service.AddProfessor(Professor);}
 
-    //YAAA
-    @GetMapping("/Professor/Update")
+    @PutMapping("/Professor/Update")
     public void UpdateProfessor(@RequestBody ProfessorDAO Professor){service.UpdateProfessor(Professor);}
 
-    //YAAA
-    @GetMapping("/Professor/Delete")
+    @DeleteMapping("/Professor/Delete")
     public void DeleteProfessor(@RequestParam(value = "id") Integer Id){service.DeleteProfessor(Id);}
 
-    //YAAA
-    @GetMapping("/Professor/addSocialNetwork")
+    @PostMapping("/Professor/addSocialNetwork")
     public void addSocialNetwork(@RequestBody SocialNetworkDAO SocialNetwork){service.addSocialNetwork(SocialNetwork);}
 
-    //YAAA
-    @GetMapping("/Professor/AddCourse")
+    @PostMapping("/Professor/AddCourse")
     public void AddProfessorCourse(@RequestBody UserCourseDAO ProfessorCourse){service.AddProfessorCourse(ProfessorCourse);}
 
-    //YAAA
-    @GetMapping("/Professor/UpdateImage")
+    @PutMapping("/Professor/UpdateImage")
     public void UpdateImage(@RequestBody ImageDAO Image){service.UpdateImage(Image);}
 
-
+    //falta
     @GetMapping("/Professor/ListAll")
     public List<SelectProfessorResult> ListAllProfessors(){return service.ListAllProfessors();}
 
+    //falta
     @GetMapping("/Professor/getById")
     public GetProfessorByIdResult getProfessorById(@RequestParam(value = "id") Integer Id){return service.getProfessorById(Id);}
 
+    //falta
     @GetMapping("/Professor/ListAcademicDegree")
     public List<SelectAcademicDegreeResult> ListAcademicDegree(){return  service.ListAcademicDegree();}
 
+    //falta
     @GetMapping("/Professor/ListSocialNetworksCatalog")
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog(){return service.ListSocialNetworksCatalog();}
 
+    //falta
     @GetMapping("/Professor/GetSocialNetworksById")
-    public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdProfessor(int Id){return service.GetSocialNetworksByIdProfessor(Id);}
+    public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdProfessor(@RequestParam(value = "id") Integer Id){return service.GetSocialNetworksByIdProfessor(Id);}
 
 
 }

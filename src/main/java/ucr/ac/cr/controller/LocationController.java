@@ -14,21 +14,18 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class LocationController {
 
     @Autowired
     private LocationService service;
 
-    //YAAA
     @GetMapping("/Location/ListAllProvinces")
     public List<Location> ListAllProvinces(){return  service.ListAllProvinces();}
 
-    //YAAA
     @GetMapping("/Location/GetCantonsByIdProvince")
     public List<Location> GetCantonsByIdProvince(@RequestParam(value = "id") Integer Id){return service.GetCantonsByIdProvince(Id);}
 
-    //YAAA
     @GetMapping("/Location/GetDistrictsByIdCanton")
     public List<Location> GetDistrictsByIdCanton(@RequestParam(value = "id") Integer Id){return service.GetDistrictsByIdCanton(Id);}
 }

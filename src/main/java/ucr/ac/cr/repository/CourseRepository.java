@@ -98,13 +98,13 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
                            @Param("DateTime") String DateTime);
 
 
-    @Query(value = "{call InsertRepliesPublicConsultation(:PublicConsultationId)}", nativeQuery = true)
+    @Query(value = "{call GetRepliesPublicConsultation(:PublicConsultationId)}", nativeQuery = true)
     List<GetRepliesPublicConsultation> GetRepliesPublicConsultation(@Param("PublicConsultationId") Integer PublicConsultationId);
 
 
 
     @Modifying
-    @Query(value = "{call InsertRepliesPublicConsultation(:PrivateMessageId,:StudentId,:ProfessorId, :Motive, :DateTime)}", nativeQuery = true)
+    @Query(value = "{call InsertRepliesPrivateMessage(:PrivateMessageId,:StudentId,:ProfessorId, :Motive, :DateTime)}", nativeQuery = true)
     void AddRepliesPrivateMessage(@Param("PrivateMessageId") Integer PublicConsultationId,
                                   @Param("StudentId") Integer StudentId,
                                   @Param("ProfessorId") Integer ProfessorId,
@@ -112,7 +112,7 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
                                   @Param("DateTime") String DateTime);
 
     @Query(value = "{call GetRepliesPrivateMessage(:PrivateMessageId)}", nativeQuery = true)
-    List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(int id);
+    List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(@Param("PrivateMessageId") Integer PublicConsultationId);
 
 
     @Modifying
