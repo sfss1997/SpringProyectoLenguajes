@@ -6,11 +6,11 @@ public class GetRepliesPublicConsultationResult {
 
     @Column (name = "Id")
     private int Id;
-    @Column (name = "PublicConsultation_id")
+    @Column (name = "Public_consultation_id")
     private int PublicConsultation_id;
     @Column (name = "Student_id")
     private int Student_id;
-    @Column (name = "DateTime")
+    @Column (name = "Date_time")
     private String DateTime;
     @Column (name = "Motive")
     private String Motive;

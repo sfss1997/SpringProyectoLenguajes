@@ -7,7 +7,7 @@ public class GetSocialNetworksByIdResult {
     private int Id;
     @Column (name = "Url")
     private String Url;
-    @Column (name = "SocialNetworksName_id")
+    @Column (name = "Social_networks_name_id")
     private int SocialNetworksName_id;
 
     public GetSocialNetworksByIdResult() {

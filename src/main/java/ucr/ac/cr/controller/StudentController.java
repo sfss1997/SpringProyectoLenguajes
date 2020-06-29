@@ -37,32 +37,25 @@ public class StudentController {
     @PutMapping("/Student/UpdateStatus")
     public void UpdateStudentStatus(@RequestBody StudentStatusDAO StudentStatus){ service.UpdateStudentStatus(StudentStatus);}
 
-
-    //falta
     @GetMapping("/Student/ListAll")
     public List<SelectStudentResult> ListAllStudents() {
         return service.ListAllStudents();
     }
 
-    //falta
     @GetMapping("/Student/getById")
     public GetStudentByIdResult getStudentById(@RequestParam(value = "id") Integer id) { return service.getStudentById(id); }
 
-    //falta
     @GetMapping("/Student/ListApproval")
     public List<StudentApprovalResult> ListStudentApproval() { return service.ListStudentApproval(); }
 
-    //falta
     @GetMapping("/Student/List")
     public List<ListStudentResult> ListStudents() { return service.ListStudents(); }
 
-    //falta
     @GetMapping("/Student/ListSocialNetworksCatalog")
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog() {return service.ListSocialNetworksCatalog();}
 
-    //falta
     @GetMapping("/Student/GetSocialNetworksById")
-    public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdStudent(int Id) {return service.GetSocialNetworksByIdStudent(Id);}
+    public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdStudent(@RequestParam(value = "id") Integer id) {return service.GetSocialNetworksByIdStudent(id);}
 
 
 

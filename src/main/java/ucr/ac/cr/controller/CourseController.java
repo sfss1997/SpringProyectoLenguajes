@@ -55,23 +55,18 @@ public class CourseController {
     @GetMapping("/Course/GetProfessorCourses")
     public List<GetProfessorCoursesResult> GetProfessorCourses(@RequestParam(value = "id")Integer Id){return service.GetProfessorCourses(Id);}
 
-    //falta este
     @GetMapping("/Course/GetProfessorByIdCourse")
     public GetProfessorByIdCourseResult GetProfessorByIdCourse(@RequestParam(value = "id")Integer Id){return service.GetProfessorByIdCourse(Id);}
 
-    //falta este
     @GetMapping("/Course/GetPublicConsultation")
     public List<GetPublicConsultationResult> GetPublicConsultation(@RequestBody GetPublicConsultationDAO PublicConsultation){return service.GetPublicConsultation(PublicConsultation);}
 
-    //falta este
     @GetMapping("/Course/GetPrivateMessage")
     public List<GetPrivateMessageResult> GetPrivateMessage(@RequestBody GetPrivateMessageDAO PrivateMessage){return service.GetPrivateMessage(PrivateMessage);}
 
-    //falta este
     @GetMapping("/Course/GetRepliesPublicConsultation")
     public List<GetRepliesPublicConsultationResult> GetRepliesPublicConsultation(@RequestParam(value = "id")Integer PublicConsultationId){return service.GetRepliesPublicConsultation(PublicConsultationId);}
 
-    //falta este
     @GetMapping("/Course/GetRepliesPrivateMessage")
     public List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(@RequestParam(value = "id")Integer Id){return service.GetRepliesPrivateMessage(Id);}
 
@@ -79,7 +74,6 @@ public class CourseController {
     @GetMapping("/Course/GetAppointment")
     public List<GetAppointmentResult> GetAppointment(@RequestBody GetAppointmentDAO Appointment){return service.GetAppointment(Appointment);}
 
-    //falta este
     @GetMapping("/Course/GetAppointmentById")
     public List<GetAppointmentResult> GetAppointmentById(@RequestParam(value = "id")Integer Id){return service.GetAppointmentById(Id);}
 

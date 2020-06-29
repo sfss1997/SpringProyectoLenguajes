@@ -15,9 +15,9 @@ public class GetProfessorByIdResult {
     public String Mail;
     @Column (name = "Image")
     public String Image;
-    @Column (name = "AcademicDegree")
+    @Column (name = "Academic_degree")
     public String AcademicDegree;
-    @Column (name = "AcademicDegreeId")
+    @Column (name = "Academic_degree_id")
     public Integer AcademicDegreeId;
     @Column (name = "Province")
     public String Province;
@@ -35,7 +35,7 @@ public class GetProfessorByIdResult {
     public String Username;
     @Column (name = "Password")
     public String Password;
-    @Column (name = "IsAdministrator")
+    @Column (name = "Is_administrator")
     public Integer IsAdministrator;
     @Column (name = "Status")
     public String Status;
