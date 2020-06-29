@@ -3,14 +3,14 @@ package ucr.ac.cr.project;
 public class GetAppointmentProfessorDAO {
 
     private int ProfessorId;
-    private int PublicConsultationId;
+    private int CourseId;
 
     public GetAppointmentProfessorDAO() {
     }
 
-    public GetAppointmentProfessorDAO(int professorId, int publicConsultationId) {
+    public GetAppointmentProfessorDAO(int professorId, int courseId) {
         ProfessorId = professorId;
-        PublicConsultationId = publicConsultationId;
+        CourseId = courseId;
     }
 
     public int getProfessorId() {
@@ -21,11 +21,11 @@ public class GetAppointmentProfessorDAO {
         ProfessorId = professorId;
     }
 
-    public int getPublicConsultationId() {
-        return PublicConsultationId;
+    public int getCourseId() {
+        return CourseId;
     }
 
-    public void setPublicConsultationId(int publicConsultationId) {
-        PublicConsultationId = publicConsultationId;
+    public void setCourseId(int courseId) {
+        CourseId = courseId;
     }
 }

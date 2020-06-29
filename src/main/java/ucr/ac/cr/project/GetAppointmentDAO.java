@@ -4,15 +4,15 @@ public class GetAppointmentDAO {
 
     private int StudentId;
     private int ProfessorId;
-    private int PublicConsultationId;
+    private int CourseId;
 
     public GetAppointmentDAO() {
     }
 
-    public GetAppointmentDAO(int studentId, int professorId, int publicConsultationId) {
+    public GetAppointmentDAO(int studentId, int professorId, int courseId) {
         StudentId = studentId;
         ProfessorId = professorId;
-        PublicConsultationId = publicConsultationId;
+        CourseId = courseId;
     }
 
     public int getStudentId() {
@@ -31,11 +31,11 @@ public class GetAppointmentDAO {
         ProfessorId = professorId;
     }
 
-    public int getPublicConsultationId() {
-        return PublicConsultationId;
+    public int getCourseId() {
+        return CourseId;
     }
 
-    public void setPublicConsultationId(int publicConsultationId) {
-        PublicConsultationId = publicConsultationId;
+    public void setCourseId(int courseId) {
+        CourseId = courseId;
     }
 }

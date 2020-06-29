@@ -134,14 +134,14 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
     @Query(value = "{call GetAppointment(:StudentId, :ProfessorId, :CourseId)}", nativeQuery = true)
     List<GetAppointmentResult> GetAppointment(@Param("StudentId") Integer StudentId,
                                               @Param("ProfessorId") Integer ProfessorId,
-                                              @Param("CourseId") Integer PublicConsultationId);
+                                              @Param("CourseId") Integer CourseId);
 
 
     @Query(value = "{call GetAppointmentById(:Id)}", nativeQuery = true)
     List<GetAppointmentResult> GetAppointmentById(@Param("Id") Integer Id);
 
 
-    @Query(value = "{call GetAppointment( :ProfessorId, :CourseId)}", nativeQuery = true)
+    @Query(value = "{call GetAppointmentProfessor( :ProfessorId, :CourseId)}", nativeQuery = true)
     List<GetAppointmentResult> GetAppointmentProfessor(@Param("ProfessorId") Integer ProfessorId,
-                                              @Param("CourseId") Integer PublicConsultationId);
+                                              @Param("CourseId") Integer CourseId);
 }

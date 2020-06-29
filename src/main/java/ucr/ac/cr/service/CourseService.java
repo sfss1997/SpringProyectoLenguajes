@@ -93,11 +93,11 @@ public class CourseService {
     public void UpdateStatusAppointment(StatusAppointmentDAO Status){ courseRepository.UpdateStatusAppointment(Status.getAppointmentId(),Status.getAccepted());}
 
 
-    public List<GetAppointmentResult> GetAppointment(GetAppointmentDAO Appointment){return appointmentRepository.GetAppointment(Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getPublicConsultationId());}
+    public List<GetAppointmentResult> GetAppointment(GetAppointmentDAO Appointment){return appointmentRepository.GetAppointment(Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getCourseId());}
 
 
     public List<GetAppointmentResult> GetAppointmentById(Integer Id){return appointmentRepository.GetAppointmentById(Id);}
 
 
-    public List<GetAppointmentResult> GetAppointmentProfessor(GetAppointmentProfessorDAO AppointmentProfessor){return appointmentRepository.GetAppointmentProfessor(AppointmentProfessor.getProfessorId(),AppointmentProfessor.getPublicConsultationId());}
+    public List<GetAppointmentResult> GetAppointmentProfessor(GetAppointmentProfessorDAO AppointmentProfessor){return appointmentRepository.GetAppointmentProfessor(AppointmentProfessor.getProfessorId(),AppointmentProfessor.getCourseId());}
 }
