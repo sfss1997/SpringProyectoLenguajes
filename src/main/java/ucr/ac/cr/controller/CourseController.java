@@ -59,7 +59,12 @@ public class CourseController {
     public GetProfessorByIdCourseResult GetProfessorByIdCourse(@RequestParam(value = "id")Integer Id){return service.GetProfessorByIdCourse(Id);}
 
     @GetMapping("/Course/GetPublicConsultation")
-    public List<GetPublicConsultationResult> GetPublicConsultation(@RequestBody GetPublicConsultationDAO PublicConsultation){return service.GetPublicConsultation(PublicConsultation);}
+    public List<GetPublicConsultationResult> GetPublicConsultation(@RequestParam(value = "courseId") Integer courseId, @RequestParam(value = "professorId") Integer professorId){
+        GetPublicConsultationDAO getPublicConsultationDAO = new GetPublicConsultationDAO();
+        getPublicConsultationDAO.setCourseId(courseId);
+        getPublicConsultationDAO.setProfessorId(professorId);
+        return service.GetPublicConsultation(getPublicConsultationDAO);
+    }
 
     @GetMapping("/Course/GetPrivateMessage")
     public List<GetPrivateMessageResult> GetPrivateMessage(@RequestBody GetPrivateMessageDAO PrivateMessage){return service.GetPrivateMessage(PrivateMessage);}
