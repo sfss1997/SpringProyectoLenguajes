@@ -3,15 +3,15 @@ package ucr.ac.cr.project;
 public class AddRepliesPublicConsultationDAO {
 
     public int PublicConsultationId;
-    public int StudentId;
-    public int ProfessorId;
+    public Integer StudentId;
+    public Integer ProfessorId;
     public String Motive;
     public String DateTime;
 
     public AddRepliesPublicConsultationDAO() {
     }
 
-    public AddRepliesPublicConsultationDAO(int publicConsultationId, int studentId, int professorId, String motive, String dateTime) {
+    public AddRepliesPublicConsultationDAO(int publicConsultationId, Integer studentId, Integer professorId, String motive, String dateTime) {
         PublicConsultationId = publicConsultationId;
         StudentId = studentId;
         ProfessorId = professorId;
@@ -27,19 +27,19 @@ public class AddRepliesPublicConsultationDAO {
         PublicConsultationId = publicConsultationId;
     }
 
-    public int getStudentId() {
+    public Integer getStudentId() {
         return StudentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(Integer studentId) {
         StudentId = studentId;
     }
 
-    public int getProfessorId() {
+    public Integer getProfessorId() {
         return ProfessorId;
     }
 
-    public void setProfessorId(int professorId) {
+    public void setProfessorId(Integer professorId) {
         ProfessorId = professorId;
     }
 
