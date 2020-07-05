@@ -21,5 +21,5 @@ public interface AppointmentRepository extends JpaRepository<GetAppointmentResul
 
     @Query(value = "{call GetAppointment( :ProfessorId, :CourseId)}", nativeQuery = true)
     List<GetAppointmentResult> GetAppointmentProfessor(@Param("ProfessorId") Integer ProfessorId,
-                                                       @Param("CourseId") Integer PublicConsultationId);
+                                                       @Param("CourseId") Integer CourseId);
 }

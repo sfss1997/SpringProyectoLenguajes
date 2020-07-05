@@ -9,7 +9,7 @@ public class GetStudentCoursesResult {
     private String Initials;
     @Column (name = "Course_id")
     private int Course_id;
-    @Column (name = "CourseName")
+    @Column (name = "Course_name")
     private String CourseName;
     @Column (name = "Credits")
     private int Credits;

@@ -33,23 +33,18 @@ public class ProfessorController {
     @PutMapping("/Professor/UpdateImage")
     public void UpdateImage(@RequestBody ImageDTO Image){service.UpdateImage(Image);}
 
-    //falta
     @GetMapping("/Professor/ListAll")
     public List<SelectProfessorResult> ListAllProfessors(){return service.ListAllProfessors();}
 
-    //falta
     @GetMapping("/Professor/getById")
     public GetProfessorByIdResult getProfessorById(@RequestParam(value = "id") Integer Id){return service.getProfessorById(Id);}
 
-    //falta
     @GetMapping("/Professor/ListAcademicDegree")
     public List<SelectAcademicDegreeResult> ListAcademicDegree(){return  service.ListAcademicDegree();}
 
-    //falta
     @GetMapping("/Professor/ListSocialNetworksCatalog")
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog(){return service.ListSocialNetworksCatalog();}
 
-    //falta
     @GetMapping("/Professor/GetSocialNetworksById")
     public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdProfessor(@RequestParam(value = "id") Integer Id){return service.GetSocialNetworksByIdProfessor(Id);}
 

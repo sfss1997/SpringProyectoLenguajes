@@ -6,11 +6,11 @@ public class GetRepliesPrivateMessageResult {
 
     @Column (name = "Id")
     private int Id;
-    @Column (name = "PrivateMessage_id")
+    @Column (name = "Private_message_id")
     private int PrivateMessage_id;
     @Column (name = "Student_id")
     private int Student_id;
-    @Column (name = "DateTime")
+    @Column (name = "Date_time")
     private String DateTime;
     @Column (name = "Motive")
     private String Motive;

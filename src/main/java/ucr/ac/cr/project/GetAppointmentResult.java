@@ -11,7 +11,7 @@ public class GetAppointmentResult {
     private int Course_id;
     @Column (name = "Student_id")
     private int Student_id;
-    @Column (name = "DateTime")
+    @Column (name = "Date_time")
     private String DateTime;
     @Column (name = "Motive")
     private String  Motive;

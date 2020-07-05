@@ -11,7 +11,7 @@ public class GetPrivateMessageResult {
     public int Course_id;
     @Column (name = "Student_id")
     public int Student_id;
-    @Column (name = "DateTime")
+    @Column (name = "Date_time")
     public String DateTime;
     @Column (name = "Motive")
     public String Motive;

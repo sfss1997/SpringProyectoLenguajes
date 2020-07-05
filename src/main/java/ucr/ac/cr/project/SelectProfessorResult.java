@@ -16,7 +16,7 @@ public class SelectProfessorResult {
     private String Mail;
     @Column (name = "Image")
     private String Image;
-    @Column (name = "AcademicDegree")
+    @Column (name = "Academic_degree_id")
     private String AcademicDegree;
     @Column (name = "Province")
     private String Province;

@@ -1,5 +1,7 @@
 package ucr.ac.cr.project;
 
+import com.sun.istack.Nullable;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,18 +12,20 @@ public class GetPublicConsultationResult {
     @Column (name = "Course_id")
     public int Course_id;
     @Column (name = "Student_id")
+    @Nullable
     public int Student_id;
-    @Column (name = "DateTime")
+    @Column (name = "Date_time")
     public String DateTime;
     @Column (name = "Motive")
     public String Motive;
+    @Nullable
     @Column (name = "Professor_id")
-    public int Professor_id;
+    public Integer Professor_id;
 
     public GetPublicConsultationResult() {
     }
 
-    public GetPublicConsultationResult(int id, int course_id, int student_id, String dateTime, String motive, int professor_id) {
+    public GetPublicConsultationResult(int id, int course_id, int student_id, String dateTime, String motive, Integer professor_id) {
         Id = id;
         Course_id = course_id;
         Student_id = student_id;
@@ -70,11 +74,11 @@ public class GetPublicConsultationResult {
         Motive = motive;
     }
 
-    public int getProfessor_id() {
+    public Integer getProfessor_id() {
         return Professor_id;
     }
 
-    public void setProfessor_id(int professor_id) {
+    public void setProfessor_id(Integer professor_id) {
         Professor_id = professor_id;
     }
 }
