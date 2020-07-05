@@ -58,17 +58,14 @@ public class CourseController {
     @GetMapping("/Course/GetProfessorByIdCourse")
     public GetProfessorByIdCourseResult GetProfessorByIdCourse(@RequestParam(value = "id")Integer Id){return service.GetProfessorByIdCourse(Id);}
 
-    @GetMapping("/Course/GetPublicConsultation")
-<<<<<<< HEAD
-    public List<GetPublicConsultationResult> GetPublicConsultation(@RequestBody GetPublicConsultationDTO PublicConsultation){return service.GetPublicConsultation(PublicConsultation);}
-=======
-    public List<GetPublicConsultationResult> GetPublicConsultation(@RequestParam(value = "courseId") Integer courseId, @RequestParam(value = "professorId") Integer professorId){
-        GetPublicConsultationDAO getPublicConsultationDAO = new GetPublicConsultationDAO();
-        getPublicConsultationDAO.setCourseId(courseId);
-        getPublicConsultationDAO.setProfessorId(professorId);
-        return service.GetPublicConsultation(getPublicConsultationDAO);
-    }
->>>>>>> da74fa303a6957f33f0bd9605b18752b3917dc8b
+    //@GetMapping("/Course/GetPublicConsultation")
+    //public List<GetPublicConsultationResult> GetPublicConsultation(@RequestBody GetPublicConsultationDTO PublicConsultation){return service.GetPublicConsultation(PublicConsultation);}
+    //public List<GetPublicConsultationResult> GetPublicConsultation(@RequestParam(value = "courseId") Integer courseId, @RequestParam(value = "professorId") Integer professorId){
+    //    GetPublicConsultationDTO getPublicConsultationDAO = new GetPublicConsultationDTO();
+    //    getPublicConsultationDAO.setCourseId(courseId);
+    //    getPublicConsultationDAO.setProfessorId(professorId);
+    //    return service.GetPublicConsultation(getPublicConsultationDAO);
+   // }
 
     @GetMapping("/Course/GetPrivateMessage")
     public List<GetPrivateMessageResult> GetPrivateMessage(@RequestBody GetPrivateMessageDTO PrivateMessage){return service.GetPrivateMessage(PrivateMessage);}

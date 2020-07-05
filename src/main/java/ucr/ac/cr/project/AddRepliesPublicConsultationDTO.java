@@ -11,11 +11,10 @@ public class AddRepliesPublicConsultationDTO {
     public AddRepliesPublicConsultationDTO() {
     }
 
-<<<<<<< HEAD:src/main/java/ucr/ac/cr/project/AddRepliesPublicConsultationDTO.java
-    public AddRepliesPublicConsultationDTO(int publicConsultationId, int studentId, int professorId, String motive, String dateTime) {
-=======
-    public AddRepliesPublicConsultationDAO(int publicConsultationId, Integer studentId, Integer professorId, String motive, String dateTime) {
->>>>>>> da74fa303a6957f33f0bd9605b18752b3917dc8b:src/main/java/ucr/ac/cr/project/AddRepliesPublicConsultationDAO.java
+
+
+    public AddRepliesPublicConsultationDTO(int publicConsultationId, Integer studentId, Integer professorId, String motive, String dateTime) {
+
         PublicConsultationId = publicConsultationId;
         StudentId = studentId;
         ProfessorId = professorId;
