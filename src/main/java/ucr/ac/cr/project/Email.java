@@ -7,9 +7,26 @@ public class Email {
     private String body;
     private String html;
 
-    
-
     public Email() {
+    }
+
+    public Email(String to, String subject, String body, String html) {
+        this.to = to;
+        this.subject = subject;
+        this.body = body;
+        this.html = html;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 
     public String getTo() {

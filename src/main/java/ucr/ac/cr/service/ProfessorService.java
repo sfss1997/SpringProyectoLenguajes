@@ -2,6 +2,7 @@ package ucr.ac.cr.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ucr.ac.cr.mail.MailClient;
 import ucr.ac.cr.project.*;
 import ucr.ac.cr.repository.*;
 
@@ -11,6 +12,8 @@ import java.util.List;
 @Service
 @Transactional
 public class ProfessorService {
+
+    MailClient mailClient;
     @Autowired
     private ProfessorRepository professorRepository;
     @Autowired
@@ -25,6 +28,14 @@ public class ProfessorService {
     private SocialNetworksProfessorRepository socialNetworksProfessorRepository;
 
     public void AddProfessor(ProfessorDTO Professor){
+        Email email = new Email();
+        email.setBody(Professor.getName() + " " + Professor.getLastName() + ", ha sido añadido satisfactoriamente." +
+                "/nNombre de usuario: " + Professor.getUsername() +
+                "/nContraseña temporal: " + Professor.getPassword() + "/nDiríjase al sitio a realizar el cambio de contraseña.");
+        email.setSubject("Nuevo Usuario");
+        email.setTo(Professor.getMail());
+
+        mailClient.SendEmail(email);
         professorRepository.addProfessor(Professor.getId(),Professor.getUsername(),Professor.getPassword(),Professor.getIsAdministrator(),Professor.getStatus(),Professor.getName(),Professor.getLastName(),Professor.getMail(),Professor.getImage(),Professor.getProvinceId(),Professor.getCantonId(),Professor.getDistrictId(),Professor.getAcademicDegree());}
 
     public void UpdateProfessor(ProfessorDTO Professor){

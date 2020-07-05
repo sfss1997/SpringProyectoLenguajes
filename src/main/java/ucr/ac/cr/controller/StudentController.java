@@ -31,11 +31,13 @@ public class StudentController {
     public void UpdateImage(@RequestBody ImageDTO Image){ service.UpdateImage(Image);}
 
     @PostMapping("/Student/AddSocialNetwork")
-    public void AddSocialNetwork(@RequestBody SocialNetworkDTO SocialNetwork)
-    {service.addSocialNetwork(SocialNetwork);}
+    public void AddSocialNetwork(@RequestBody SocialNetworkDTO SocialNetwork) {service.addSocialNetwork(SocialNetwork);}
 
-    @PutMapping("/Student/UpdateStatus")
-    public void UpdateStudentStatus(@RequestBody StudentStatusDTO StudentStatus){ service.UpdateStudentStatus(StudentStatus);}
+    @PutMapping("/Student/Approval")
+    public void Approval(@RequestParam(value = "id") Integer id){ service.StudentApproval(id);}
+
+    @PutMapping("/Student/Deny")
+    public void Deny(@RequestParam(value = "id") Integer id){ service.StudentDeny(id);}
 
     @GetMapping("/Student/ListAll")
     public List<SelectStudentResult> ListAllStudents() {

@@ -2,6 +2,7 @@ package ucr.ac.cr.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ucr.ac.cr.mail.MailClient;
 import ucr.ac.cr.project.*;
 import ucr.ac.cr.repository.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
 @Transactional
 public class StudentService {
 
+    MailClient mailClient;
     @Autowired
     private StudentRepository studentRepository;
     @Autowired
@@ -27,7 +29,15 @@ public class StudentService {
     @Autowired
     private SocialNetworksStudentRepository socialNetworksStudentRepository;
 
-    public void AddStudent(StudentDTO student){ studentRepository.addStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}
+    public void AddStudent(StudentDTO student){
+
+        Email email = new Email();
+        email.setBody(student.getStudentName() + " " + student.getLastName() + ", ha sido añadido satisfactoriamente, su aprobación se encuentra en espera. ");
+        email.setSubject("Nuevo Usuario");
+        email.setTo(student.getMail());
+        mailClient.SendEmail(email);
+        studentRepository.addStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());
+    }
 
     public void UpdateStudent(StudentDTO student){ studentRepository.updateStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}
 
@@ -39,7 +49,27 @@ public class StudentService {
 
     public List<StudentApprovalResult> ListStudentApproval() { return studentApprovalRepository.ListStudentApproval(); }
 
-    public void UpdateStudentStatus(StudentStatusDTO StudentStatus){ studentRepository.UpdateStudentStatus(StudentStatus.getId(),StudentStatus.getRegistrationStatus());}
+    public void StudentApproval(Integer id){
+
+        GetStudentByIdResult student = getStudentById(id);
+        Email email = new Email();
+        email.setBody("El estudiante " + student.getStudentName() + " " + student.getLastName() + ", ha sido aprobado.");
+        email.setSubject("Actualización de estado");
+        email.setTo(student.getMail());
+        mailClient.SendEmail(email);
+        studentRepository.UpdateStudentStatus(id,"Aprovado");
+    }
+
+    public void StudentDeny(Integer id){
+
+        GetStudentByIdResult student = getStudentById(id);
+        Email email = new Email();
+        email.setBody("El estudiante " + student.getStudentName() + " " + student.getLastName() + ", ha sido rechazado.");
+        email.setSubject("Actualización de estado");
+        email.setTo(student.getMail());
+        mailClient.SendEmail(email);
+        studentRepository.UpdateStudentStatus(id,"Rechazado");
+    }
 
     public void DeleteStudent(int Id){ studentRepository.DeleteStudent(Id);}
 
