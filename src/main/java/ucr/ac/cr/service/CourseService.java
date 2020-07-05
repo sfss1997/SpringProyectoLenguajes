@@ -32,11 +32,11 @@ public class CourseService {
     @Autowired
     private AppointmentRepository appointmentRepository;
 
-    public void AddCourse(CourseDAO course){
+    public void AddCourse(CourseDTO course){
         courseRepository.AddCourse(course.getId(),course.getInitials(),course.getName(),course.getIsActive(),course.getCredits(),course.getCycle());}
 
 
-    public void UpdateCourse(CourseDAO course){
+    public void UpdateCourse(CourseDTO course){
         courseRepository.UpdateCourse(course.getId(),course.getInitials(),course.getName(),course.getIsActive(),course.getCredits(),course.getCycle());}
 
 
@@ -59,20 +59,20 @@ public class CourseService {
     public GetProfessorByIdCourseResult GetProfessorByIdCourse(Integer Id){return professorCourseRepository.GetProfessorByIdCourse(Id);}
 
 
-    public void AddPublicConsultation(PublicConsultationDAO PublicConsultation){  courseRepository.AddPublicConsultation(PublicConsultation.getCourseId(),PublicConsultation.getStudentId(),PublicConsultation.getProfessorId(),PublicConsultation.getMotive(),PublicConsultation.getDateTime());}
+    public void AddPublicConsultation(PublicConsultationDTO PublicConsultation){  courseRepository.AddPublicConsultation(PublicConsultation.getCourseId(),PublicConsultation.getStudentId(),PublicConsultation.getProfessorId(),PublicConsultation.getMotive(),PublicConsultation.getDateTime());}
 
 
-    public void AddPrivateMessage(PrivateMessageDAO PrivateMessage ){
+    public void AddPrivateMessage(PrivateMessageDTO PrivateMessage ){
         courseRepository.AddPrivateMessage(PrivateMessage.getCourseId(),PrivateMessage.getStudentId(),PrivateMessage.getProfessorId(),PrivateMessage.getMotive(), PrivateMessage.getDateTime());}
 
 
-    public List<GetPublicConsultationResult> GetPublicConsultation(GetPublicConsultationDAO PublicConsultation){return publicConsultationRepository.GetPublicConsultation(PublicConsultation.getCourseId(), PublicConsultation.getProfessorId());}
+    public List<GetPublicConsultationResult> GetPublicConsultation(GetPublicConsultationDTO PublicConsultation){return publicConsultationRepository.GetPublicConsultation(PublicConsultation.getCourseId(), PublicConsultation.getProfessorId());}
 
 
-    public List<GetPrivateMessageResult> GetPrivateMessage(GetPrivateMessageDAO PrivateMessage){return privateMessageRepository.GetPrivateMessage(PrivateMessage.getCourseId(),PrivateMessage.getProfessorId());}
+    public List<GetPrivateMessageResult> GetPrivateMessage(GetPrivateMessageDTO PrivateMessage){return privateMessageRepository.GetPrivateMessage(PrivateMessage.getCourseId(),PrivateMessage.getProfessorId());}
 
 
-    public void AddRepliesPublicConsultation(AddRepliesPublicConsultationDAO Replies){
+    public void AddRepliesPublicConsultation(AddRepliesPublicConsultationDTO Replies){
         courseRepository.AddRepliesPublicConsultation(Replies.getPublicConsultationId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
 
 
@@ -80,24 +80,24 @@ public class CourseService {
 
 
 
-    public void AddRepliesPrivateMessage(AddRepliesPrivateMessageDAO Replies){
+    public void AddRepliesPrivateMessage(AddRepliesPrivateMessageDTO Replies){
         courseRepository.AddRepliesPrivateMessage(Replies.getPrivateMessageId(),Replies.getStudentId(),Replies.getProfessorId(),Replies.getMotive(),Replies.getDateTime());}
 
     public List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(Integer Id){return repliesPrivateMessageRepository.GetRepliesPrivateMessage(Id);}
 
 
-    public void AddAppointment(AppointmentDAO Appointment){
+    public void AddAppointment(AppointmentDTO Appointment){
         courseRepository.AddAppointment(Appointment.getCourseId(),Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getMotive(),Appointment.getAccepted(),Appointment.getDateTime());}
 
 
-    public void UpdateStatusAppointment(StatusAppointmentDAO Status){ courseRepository.UpdateStatusAppointment(Status.getAppointmentId(),Status.getAccepted());}
+    public void UpdateStatusAppointment(StatusAppointmentDTO Status){ courseRepository.UpdateStatusAppointment(Status.getAppointmentId(),Status.getAccepted());}
 
 
-    public List<GetAppointmentResult> GetAppointment(GetAppointmentDAO Appointment){return appointmentRepository.GetAppointment(Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getCourseId());}
+    public List<GetAppointmentResult> GetAppointment(GetAppointmentDTO Appointment){return appointmentRepository.GetAppointment(Appointment.getStudentId(),Appointment.getProfessorId(),Appointment.getCourseId());}
 
 
     public List<GetAppointmentResult> GetAppointmentById(Integer Id){return appointmentRepository.GetAppointmentById(Id);}
 
 
-    public List<GetAppointmentResult> GetAppointmentProfessor(GetAppointmentProfessorDAO AppointmentProfessor){return appointmentRepository.GetAppointmentProfessor(AppointmentProfessor.getProfessorId(),AppointmentProfessor.getCourseId());}
+    public List<GetAppointmentResult> GetAppointmentProfessor(GetAppointmentProfessorDTO AppointmentProfessor){return appointmentRepository.GetAppointmentProfessor(AppointmentProfessor.getProfessorId(),AppointmentProfessor.getCourseId());}
 }

@@ -1,14 +1,14 @@
 package ucr.ac.cr.project;
 
-public class ImageDAO {
+public class ImageDTO {
 
     private String Image;
     private int Id;
 
-    public ImageDAO() {
+    public ImageDTO() {
     }
 
-    public ImageDAO(String image, int id) {
+    public ImageDTO(String image, int id) {
         Image = image;
         Id = id;
     }

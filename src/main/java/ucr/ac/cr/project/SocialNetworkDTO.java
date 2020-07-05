@@ -1,16 +1,16 @@
 package ucr.ac.cr.project;
 
-public class SocialNetworkDAO {
+public class SocialNetworkDTO {
 
     private int Id;
     private int UserId;
     private String Url;
     private int SocialNetworksNameId;
 
-    public SocialNetworkDAO() {
+    public SocialNetworkDTO() {
     }
 
-    public SocialNetworkDAO(int id, int userId, String url, int socialNetworksNameId) {
+    public SocialNetworkDTO(int id, int userId, String url, int socialNetworksNameId) {
         Id = id;
         UserId = userId;
         Url = url;

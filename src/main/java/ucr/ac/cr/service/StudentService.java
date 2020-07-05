@@ -27,9 +27,9 @@ public class StudentService {
     @Autowired
     private SocialNetworksStudentRepository socialNetworksStudentRepository;
 
-    public void AddStudent(StudentDAO student){ studentRepository.addStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}
+    public void AddStudent(StudentDTO student){ studentRepository.addStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}
 
-    public void UpdateStudent(StudentDAO student){ studentRepository.updateStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}
+    public void UpdateStudent(StudentDTO student){ studentRepository.updateStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}
 
     public List<SelectStudentResult> ListAllStudents() {
         return allStudentRepository.ListAllStudents();
@@ -39,24 +39,24 @@ public class StudentService {
 
     public List<StudentApprovalResult> ListStudentApproval() { return studentApprovalRepository.ListStudentApproval(); }
 
-    public void UpdateStudentStatus(StudentStatusDAO StudentStatus){ studentRepository.UpdateStudentStatus(StudentStatus.getId(),StudentStatus.getRegistrationStatus());}
+    public void UpdateStudentStatus(StudentStatusDTO StudentStatus){ studentRepository.UpdateStudentStatus(StudentStatus.getId(),StudentStatus.getRegistrationStatus());}
 
     public void DeleteStudent(int Id){ studentRepository.DeleteStudent(Id);}
 
     public List<ListStudentResult> ListStudents() { return listStudentsRepository.ListStudents(); }
 
-    public void addSocialNetwork(SocialNetworkDAO SocialNetwork)
+    public void addSocialNetwork(SocialNetworkDTO SocialNetwork)
     {
         studentRepository.addSocialNetwork(SocialNetwork.getId(),SocialNetwork.getUserId(),SocialNetwork.getUrl(),SocialNetwork.getSocialNetworksNameId());}
 
-    public void AddStudentCourse(UserCourseDAO StudentCourse) {
+    public void AddStudentCourse(UserCourseDTO StudentCourse) {
         studentRepository.AddStudentCourse(StudentCourse.getUserId(),StudentCourse.getCourseId());}
 
     public List<GetNameSocialNetworksResult> ListSocialNetworksCatalog() {return socialNetworkCatalogRepository.ListSocialNetworksCatalog();}
 
     public List<GetSocialNetworksByIdResult> GetSocialNetworksByIdStudent(int Id) {return socialNetworksStudentRepository.GetSocialNetworksByIdStudent(Id);}
 
-    public void UpdateImage(ImageDAO Image){ studentRepository.UpdateImage(Image.getImage(),Image.getId());}
+    public void UpdateImage(ImageDTO Image){ studentRepository.UpdateImage(Image.getImage(),Image.getId());}
 
 
 

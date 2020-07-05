@@ -1,24 +1,21 @@
 package ucr.ac.cr.project;
 
-public class AppointmentDAO {
+public class PublicConsultationDTO {
 
+    private int CourseId;
+    private int StudentId;
+    private int ProfessorId;
+    private String Motive;
+    private String DateTime;
 
-    public int CourseId;
-    public int StudentId;
-    public int ProfessorId;
-    public String Motive;
-    public int Accepted;
-    public String DateTime;
-
-    public AppointmentDAO() {
+    public PublicConsultationDTO() {
     }
 
-    public AppointmentDAO(int courseId, int studentId, int professorId, String motive, int accepted, String dateTime) {
+    public PublicConsultationDTO(int courseId, int studentId, int professorId, String motive, String dateTime) {
         CourseId = courseId;
         StudentId = studentId;
         ProfessorId = professorId;
         Motive = motive;
-        Accepted = accepted;
         DateTime = dateTime;
     }
 
@@ -52,14 +49,6 @@ public class AppointmentDAO {
 
     public void setMotive(String motive) {
         Motive = motive;
-    }
-
-    public int getAccepted() {
-        return Accepted;
-    }
-
-    public void setAccepted(int accepted) {
-        Accepted = accepted;
     }
 
     public String getDateTime() {

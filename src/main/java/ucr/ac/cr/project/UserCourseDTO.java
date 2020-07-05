@@ -1,15 +1,15 @@
 package ucr.ac.cr.project;
 
-public class UserCourseDAO {
+public class UserCourseDTO {
 
     private int UserId;
     private int CourseId;
 
-    public UserCourseDAO() {
+    public UserCourseDTO() {
 
     }
 
-    public UserCourseDAO(int userId, int courseId) {
+    public UserCourseDTO(int userId, int courseId) {
         UserId = userId;
         CourseId = courseId;
     }

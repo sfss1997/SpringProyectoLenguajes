@@ -1,6 +1,6 @@
 package ucr.ac.cr.project;
 
-public class PrivateMessageDAO {
+public class PrivateMessageDTO {
 
     private int CourseId;
     private int StudentId;
@@ -8,10 +8,10 @@ public class PrivateMessageDAO {
     private String Motive;
     private String DateTime;
 
-    public PrivateMessageDAO() {
+    public PrivateMessageDTO() {
     }
 
-    public PrivateMessageDAO(int courseId, int studentId, int professorId, String motive, String dateTime) {
+    public PrivateMessageDTO(int courseId, int studentId, int professorId, String motive, String dateTime) {
         CourseId = courseId;
         StudentId = studentId;
         ProfessorId = professorId;

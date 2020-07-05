@@ -1,6 +1,6 @@
 package ucr.ac.cr.project;
 
-public class CourseDAO {
+public class CourseDTO {
 
     private int Id;
     private String Initials;
@@ -9,10 +9,10 @@ public class CourseDAO {
     private int Credits;
     private int Cycle;
 
-    public CourseDAO() {
+    public CourseDTO() {
     }
 
-    public CourseDAO(int id, String initials, String name, int isActive, int credits, int cycle) {
+    public CourseDTO(int id, String initials, String name, int isActive, int credits, int cycle) {
         Id = id;
         Initials = initials;
         Name = name;

@@ -1,6 +1,6 @@
 package ucr.ac.cr.project;
 
-public class StudentDAO {
+public class StudentDTO {
 
     private int Id;
     private String Username;
@@ -18,7 +18,7 @@ public class StudentDAO {
     private int CantonId;
     private int DistrictId;
 
-    public StudentDAO() {
+    public StudentDTO() {
     }
 
     public int getId() {

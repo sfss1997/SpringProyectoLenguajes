@@ -1,30 +1,33 @@
 package ucr.ac.cr.project;
 
-public class AddRepliesPrivateMessageDAO {
+public class AppointmentDTO {
 
-    public int PrivateMessageId;
+
+    public int CourseId;
     public int StudentId;
     public int ProfessorId;
     public String Motive;
+    public int Accepted;
     public String DateTime;
 
-    public AddRepliesPrivateMessageDAO() {
+    public AppointmentDTO() {
     }
 
-    public AddRepliesPrivateMessageDAO(int privateMessageId, int studentId, int professorId, String motive, String dateTime) {
-        PrivateMessageId = privateMessageId;
+    public AppointmentDTO(int courseId, int studentId, int professorId, String motive, int accepted, String dateTime) {
+        CourseId = courseId;
         StudentId = studentId;
         ProfessorId = professorId;
         Motive = motive;
+        Accepted = accepted;
         DateTime = dateTime;
     }
 
-    public int getPrivateMessageId() {
-        return PrivateMessageId;
+    public int getCourseId() {
+        return CourseId;
     }
 
-    public void setPrivateMessageId(int privateMessageId) {
-        PrivateMessageId = privateMessageId;
+    public void setCourseId(int courseId) {
+        CourseId = courseId;
     }
 
     public int getStudentId() {
@@ -49,6 +52,14 @@ public class AddRepliesPrivateMessageDAO {
 
     public void setMotive(String motive) {
         Motive = motive;
+    }
+
+    public int getAccepted() {
+        return Accepted;
+    }
+
+    public void setAccepted(int accepted) {
+        Accepted = accepted;
     }
 
     public String getDateTime() {

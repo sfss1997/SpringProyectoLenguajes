@@ -1,30 +1,30 @@
 package ucr.ac.cr.project;
 
-public class AddRepliesPublicConsultationDAO {
+public class AddRepliesPrivateMessageDTO {
 
-    public int PublicConsultationId;
+    public int PrivateMessageId;
     public int StudentId;
     public int ProfessorId;
     public String Motive;
     public String DateTime;
 
-    public AddRepliesPublicConsultationDAO() {
+    public AddRepliesPrivateMessageDTO() {
     }
 
-    public AddRepliesPublicConsultationDAO(int publicConsultationId, int studentId, int professorId, String motive, String dateTime) {
-        PublicConsultationId = publicConsultationId;
+    public AddRepliesPrivateMessageDTO(int privateMessageId, int studentId, int professorId, String motive, String dateTime) {
+        PrivateMessageId = privateMessageId;
         StudentId = studentId;
         ProfessorId = professorId;
         Motive = motive;
         DateTime = dateTime;
     }
 
-    public int getPublicConsultationId() {
-        return PublicConsultationId;
+    public int getPrivateMessageId() {
+        return PrivateMessageId;
     }
 
-    public void setPublicConsultationId(int publicConsultationId) {
-        PublicConsultationId = publicConsultationId;
+    public void setPrivateMessageId(int privateMessageId) {
+        PrivateMessageId = privateMessageId;
     }
 
     public int getStudentId() {

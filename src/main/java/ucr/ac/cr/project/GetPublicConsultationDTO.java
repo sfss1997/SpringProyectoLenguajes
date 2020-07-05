@@ -1,14 +1,14 @@
 package ucr.ac.cr.project;
 
-public class GetPublicConsultationDAO {
+public class GetPublicConsultationDTO {
 
     private int CourseId;
     private int ProfessorId;
 
-    public GetPublicConsultationDAO() {
+    public GetPublicConsultationDTO() {
     }
 
-    public GetPublicConsultationDAO(int courseId, int professorId) {
+    public GetPublicConsultationDTO(int courseId, int professorId) {
         CourseId = courseId;
         ProfessorId = professorId;
     }

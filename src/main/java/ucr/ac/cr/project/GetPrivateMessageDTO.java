@@ -1,14 +1,14 @@
 package ucr.ac.cr.project;
 
-public class GetPrivateMessageDAO {
+public class GetPrivateMessageDTO {
 
     public int CourseId;
     public int ProfessorId;
 
-    public GetPrivateMessageDAO() {
+    public GetPrivateMessageDTO() {
     }
 
-    public GetPrivateMessageDAO(int courseId, int professorId) {
+    public GetPrivateMessageDTO(int courseId, int professorId) {
         CourseId = courseId;
         ProfessorId = professorId;
     }

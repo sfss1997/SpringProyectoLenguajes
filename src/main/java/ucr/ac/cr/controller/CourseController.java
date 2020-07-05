@@ -17,31 +17,31 @@ public class CourseController {
     private CourseService service;
 
     @PostMapping("/Course/Add")
-    public void AddCourse(@RequestBody CourseDAO course){service.AddCourse(course);}
+    public void AddCourse(@RequestBody CourseDTO course){service.AddCourse(course);}
 
     @PutMapping("/Course/Update")
-    public void UpdateCourse(@RequestBody CourseDAO course){service.UpdateCourse(course);}
+    public void UpdateCourse(@RequestBody CourseDTO course){service.UpdateCourse(course);}
 
     @DeleteMapping("/Course/DeleteCourse")
     public void DeleteCourse(@RequestParam(value = "id")Integer Id){service.DeleteCourse(Id);}
 
     @PostMapping("/Course/AddPublicConsultation")
-    public void AddPublicConsultation(@RequestBody PublicConsultationDAO PublicConsultation){  service.AddPublicConsultation(PublicConsultation);}
+    public void AddPublicConsultation(@RequestBody PublicConsultationDTO PublicConsultation){  service.AddPublicConsultation(PublicConsultation);}
 
     @PostMapping("/Course/AddPrivateMessage")
-    public void AddPrivateMessage(@RequestBody PrivateMessageDAO PrivateMessage ){service.AddPrivateMessage(PrivateMessage );}
+    public void AddPrivateMessage(@RequestBody PrivateMessageDTO PrivateMessage ){service.AddPrivateMessage(PrivateMessage );}
 
     @PostMapping("/Course/AddRepliesPublicConsultation")
-    public void AddRepliesPublicConsultation(@RequestBody AddRepliesPublicConsultationDAO Replies){service.AddRepliesPublicConsultation(Replies);}
+    public void AddRepliesPublicConsultation(@RequestBody AddRepliesPublicConsultationDTO Replies){service.AddRepliesPublicConsultation(Replies);}
 
     @PostMapping("/Course/AddRepliesPrivateMessage")
-    public void AddRepliesPrivateMessage(@RequestBody AddRepliesPrivateMessageDAO Replies){service.AddRepliesPrivateMessage(Replies);}
+    public void AddRepliesPrivateMessage(@RequestBody AddRepliesPrivateMessageDTO Replies){service.AddRepliesPrivateMessage(Replies);}
 
     @PostMapping("/Course/AddAppointment")
-    public void AddAppointment(@RequestBody AppointmentDAO Appointment){service.AddAppointment(Appointment);}
+    public void AddAppointment(@RequestBody AppointmentDTO Appointment){service.AddAppointment(Appointment);}
 
     @PutMapping("/Course/UpdateStatusAppointment")
-    public void UpdateStatusAppointment(@RequestBody StatusAppointmentDAO Status){ service.UpdateStatusAppointment(Status);}
+    public void UpdateStatusAppointment(@RequestBody StatusAppointmentDTO Status){ service.UpdateStatusAppointment(Status);}
 
     @GetMapping("/Course/GetCourseById")
     public Course GetCourseById(@RequestParam(value = "id")Integer Id){return service.getCourseById(Id);}
@@ -61,11 +61,11 @@ public class CourseController {
 
     //falta este
     @GetMapping("/Course/GetPublicConsultation")
-    public List<GetPublicConsultationResult> GetPublicConsultation(@RequestBody GetPublicConsultationDAO PublicConsultation){return service.GetPublicConsultation(PublicConsultation);}
+    public List<GetPublicConsultationResult> GetPublicConsultation(@RequestBody GetPublicConsultationDTO PublicConsultation){return service.GetPublicConsultation(PublicConsultation);}
 
     //falta este
     @GetMapping("/Course/GetPrivateMessage")
-    public List<GetPrivateMessageResult> GetPrivateMessage(@RequestBody GetPrivateMessageDAO PrivateMessage){return service.GetPrivateMessage(PrivateMessage);}
+    public List<GetPrivateMessageResult> GetPrivateMessage(@RequestBody GetPrivateMessageDTO PrivateMessage){return service.GetPrivateMessage(PrivateMessage);}
 
     //falta este
     @GetMapping("/Course/GetRepliesPublicConsultation")
@@ -77,7 +77,7 @@ public class CourseController {
 
     //falta este
     @GetMapping("/Course/GetAppointment")
-    public List<GetAppointmentResult> GetAppointment(@RequestBody GetAppointmentDAO Appointment){return service.GetAppointment(Appointment);}
+    public List<GetAppointmentResult> GetAppointment(@RequestBody GetAppointmentDTO Appointment){return service.GetAppointment(Appointment);}
 
     //falta este
     @GetMapping("/Course/GetAppointmentById")
@@ -85,7 +85,7 @@ public class CourseController {
 
     //falta este
     @GetMapping("/Course/GetAppointmentProfessor")
-    public List<GetAppointmentResult> GetAppointmentProfessor(@RequestBody GetAppointmentProfessorDAO AppointmentProfessor){return service.GetAppointmentProfessor(AppointmentProfessor);}
+    public List<GetAppointmentResult> GetAppointmentProfessor(@RequestBody GetAppointmentProfessorDTO AppointmentProfessor){return service.GetAppointmentProfessor(AppointmentProfessor);}
 
 
 }

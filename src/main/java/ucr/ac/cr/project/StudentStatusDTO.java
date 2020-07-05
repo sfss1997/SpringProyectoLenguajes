@@ -1,14 +1,14 @@
 package ucr.ac.cr.project;
 
-public class StudentStatusDAO {
+public class StudentStatusDTO {
 
     private int Id;
     private String RegistrationStatus;
 
-    public StudentStatusDAO() {
+    public StudentStatusDTO() {
     }
 
-    public StudentStatusDAO(int id, String registrationStatus) {
+    public StudentStatusDTO(int id, String registrationStatus) {
         Id = id;
         RegistrationStatus = registrationStatus;
     }

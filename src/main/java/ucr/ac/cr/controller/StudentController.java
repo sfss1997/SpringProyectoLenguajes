@@ -16,26 +16,26 @@ public class StudentController {
     private StudentService service;
 
     @RequestMapping(path = "/Student/Add", method = RequestMethod.POST)
-    public void AddStudent(@RequestBody StudentDAO student){ service.AddStudent(student);}
+    public void AddStudent(@RequestBody StudentDTO student){ service.AddStudent(student);}
 
     @RequestMapping(path = "/Student/Update", method = RequestMethod.PUT)
-    public void UpdateStudent(@RequestBody StudentDAO student){ service.UpdateStudent(student);}
+    public void UpdateStudent(@RequestBody StudentDTO student){ service.UpdateStudent(student);}
 
     @DeleteMapping("/Student/Delete")
     public void DeleteStudent(@RequestParam(value = "id") Integer Id){ service.DeleteStudent(Id);}
 
     @PostMapping("/Student/AddCourse")
-    public void AddStudentCourse(@RequestBody UserCourseDAO StudentCourse) {service.AddStudentCourse(StudentCourse);}
+    public void AddStudentCourse(@RequestBody UserCourseDTO StudentCourse) {service.AddStudentCourse(StudentCourse);}
 
     @PutMapping("/Student/UpdateImage")
-    public void UpdateImage(@RequestBody ImageDAO Image){ service.UpdateImage(Image);}
+    public void UpdateImage(@RequestBody ImageDTO Image){ service.UpdateImage(Image);}
 
     @PostMapping("/Student/AddSocialNetwork")
-    public void AddSocialNetwork(@RequestBody SocialNetworkDAO SocialNetwork)
+    public void AddSocialNetwork(@RequestBody SocialNetworkDTO SocialNetwork)
     {service.addSocialNetwork(SocialNetwork);}
 
     @PutMapping("/Student/UpdateStatus")
-    public void UpdateStudentStatus(@RequestBody StudentStatusDAO StudentStatus){ service.UpdateStudentStatus(StudentStatus);}
+    public void UpdateStudentStatus(@RequestBody StudentStatusDTO StudentStatus){ service.UpdateStudentStatus(StudentStatus);}
 
 
     //falta

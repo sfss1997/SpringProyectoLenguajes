@@ -1,14 +1,14 @@
 package ucr.ac.cr.project;
 
-public class StatusAppointmentDAO {
+public class StatusAppointmentDTO {
 
     private int AppointmentId;
     private int Accepted;
 
-    public StatusAppointmentDAO() {
+    public StatusAppointmentDTO() {
     }
 
-    public StatusAppointmentDAO(int appointmentId, int accepted) {
+    public StatusAppointmentDTO(int appointmentId, int accepted) {
         AppointmentId = appointmentId;
         Accepted = accepted;
     }

@@ -1,16 +1,26 @@
 package ucr.ac.cr.project;
 
-public class GetAppointmentProfessorDAO {
+public class GetAppointmentDTO {
 
+    private int StudentId;
     private int ProfessorId;
     private int CourseId;
 
-    public GetAppointmentProfessorDAO() {
+    public GetAppointmentDTO() {
     }
 
-    public GetAppointmentProfessorDAO(int professorId, int courseId) {
+    public GetAppointmentDTO(int studentId, int professorId, int courseId) {
+        StudentId = studentId;
         ProfessorId = professorId;
         CourseId = courseId;
+    }
+
+    public int getStudentId() {
+        return StudentId;
+    }
+
+    public void setStudentId(int studentId) {
+        StudentId = studentId;
     }
 
     public int getProfessorId() {

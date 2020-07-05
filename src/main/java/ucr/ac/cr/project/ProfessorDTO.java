@@ -1,6 +1,6 @@
 package ucr.ac.cr.project;
 
-public class ProfessorDAO {
+public class ProfessorDTO {
 
     private int Id;
     private String Username;
@@ -16,10 +16,10 @@ public class ProfessorDAO {
     private int DistrictId;
     private int AcademicDegree;
 
-    public ProfessorDAO() {
+    public ProfessorDTO() {
     }
 
-    public ProfessorDAO(int id, String username, String password, int isAdministrator, String status, String name, String lastName, String mail, String image, int provinceId, int cantonId, int districtId, int academicDegree) {
+    public ProfessorDTO(int id, String username, String password, int isAdministrator, String status, String name, String lastName, String mail, String image, int provinceId, int cantonId, int districtId, int academicDegree) {
         Id = id;
         Username = username;
         Password = password;

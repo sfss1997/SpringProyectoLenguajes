@@ -16,22 +16,22 @@ public class ProfessorController {
     private ProfessorService service;
 
     @PostMapping("/Professor/Add")
-    public void AddProfessor(@RequestBody ProfessorDAO Professor){service.AddProfessor(Professor);}
+    public void AddProfessor(@RequestBody ProfessorDTO Professor){service.AddProfessor(Professor);}
 
     @PutMapping("/Professor/Update")
-    public void UpdateProfessor(@RequestBody ProfessorDAO Professor){service.UpdateProfessor(Professor);}
+    public void UpdateProfessor(@RequestBody ProfessorDTO Professor){service.UpdateProfessor(Professor);}
 
     @DeleteMapping("/Professor/Delete")
     public void DeleteProfessor(@RequestParam(value = "id") Integer Id){service.DeleteProfessor(Id);}
 
     @PostMapping("/Professor/addSocialNetwork")
-    public void addSocialNetwork(@RequestBody SocialNetworkDAO SocialNetwork){service.addSocialNetwork(SocialNetwork);}
+    public void addSocialNetwork(@RequestBody SocialNetworkDTO SocialNetwork){service.addSocialNetwork(SocialNetwork);}
 
     @PostMapping("/Professor/AddCourse")
-    public void AddProfessorCourse(@RequestBody UserCourseDAO ProfessorCourse){service.AddProfessorCourse(ProfessorCourse);}
+    public void AddProfessorCourse(@RequestBody UserCourseDTO ProfessorCourse){service.AddProfessorCourse(ProfessorCourse);}
 
     @PutMapping("/Professor/UpdateImage")
-    public void UpdateImage(@RequestBody ImageDAO Image){service.UpdateImage(Image);}
+    public void UpdateImage(@RequestBody ImageDTO Image){service.UpdateImage(Image);}
 
     //falta
     @GetMapping("/Professor/ListAll")
