@@ -3,15 +3,19 @@ package ucr.ac.cr.project;
 public class PublicConsultationDTO {
 
     private int CourseId;
-    private int StudentId;
-    private int ProfessorId;
+    private Integer StudentId;
+    private Integer ProfessorId;
     private String Motive;
     private String DateTime;
 
     public PublicConsultationDTO() {
     }
 
+<<<<<<< HEAD:src/main/java/ucr/ac/cr/project/PublicConsultationDTO.java
     public PublicConsultationDTO(int courseId, int studentId, int professorId, String motive, String dateTime) {
+=======
+    public PublicConsultationDAO(int courseId, Integer studentId, Integer professorId, String motive, String dateTime) {
+>>>>>>> da74fa303a6957f33f0bd9605b18752b3917dc8b:src/main/java/ucr/ac/cr/project/PublicConsultationDAO.java
         CourseId = courseId;
         StudentId = studentId;
         ProfessorId = professorId;
@@ -27,19 +31,19 @@ public class PublicConsultationDTO {
         CourseId = courseId;
     }
 
-    public int getStudentId() {
+    public Integer getStudentId() {
         return StudentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(Integer studentId) {
         StudentId = studentId;
     }
 
-    public int getProfessorId() {
+    public Integer getProfessorId() {
         return ProfessorId;
     }
 
-    public void setProfessorId(int professorId) {
+    public void setProfessorId(Integer professorId) {
         ProfessorId = professorId;
     }
 
