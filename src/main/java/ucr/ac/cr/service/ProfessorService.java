@@ -35,7 +35,7 @@ public class ProfessorService {
         email.setSubject("Nuevo Usuario");
         email.setTo(Professor.getMail());
 
-        mailClient.SendEmail(email);
+        //mailClient.SendEmail(email);
         professorRepository.addProfessor(Professor.getId(),Professor.getUsername(),Professor.getPassword(),Professor.getIsAdministrator(),Professor.getStatus(),Professor.getName(),Professor.getLastName(),Professor.getMail(),Professor.getImage(),Professor.getProvinceId(),Professor.getCantonId(),Professor.getDistrictId(),Professor.getAcademicDegree());}
 
     public void UpdateProfessor(ProfessorDTO Professor){

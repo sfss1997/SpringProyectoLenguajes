@@ -34,10 +34,10 @@ public class StudentController {
     public void AddSocialNetwork(@RequestBody SocialNetworkDTO SocialNetwork) {service.addSocialNetwork(SocialNetwork);}
 
     @PutMapping("/Student/Approval")
-    public void Approval(@RequestParam(value = "id") Integer id){ service.StudentApproval(id);}
+    public void Approval(@RequestBody GetStudentByIdResult getStudentByIdResult){ service.StudentApproval(getStudentByIdResult);}
 
     @PutMapping("/Student/Deny")
-    public void Deny(@RequestParam(value = "id") Integer id){ service.StudentDeny(id);}
+    public void Deny(@RequestBody GetStudentByIdResult getStudentByIdResult){ service.StudentDeny(getStudentByIdResult);}
 
     @GetMapping("/Student/ListAll")
     public List<SelectStudentResult> ListAllStudents() {

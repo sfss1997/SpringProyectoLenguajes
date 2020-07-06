@@ -35,7 +35,7 @@ public class StudentService {
         email.setBody(student.getStudentName() + " " + student.getLastName() + ", ha sido añadido satisfactoriamente, su aprobación se encuentra en espera. ");
         email.setSubject("Nuevo Usuario");
         email.setTo(student.getMail());
-        mailClient.SendEmail(email);
+        //mailClient.SendEmail(email);
         studentRepository.addStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());
     }
 
@@ -49,26 +49,27 @@ public class StudentService {
 
     public List<StudentApprovalResult> ListStudentApproval() { return studentApprovalRepository.ListStudentApproval(); }
 
-    public void StudentApproval(Integer id){
+    public void StudentApproval(GetStudentByIdResult student){
 
-        GetStudentByIdResult student = getStudentById(id);
+
         Email email = new Email();
         email.setBody("El estudiante " + student.getStudentName() + " " + student.getLastName() + ", ha sido aprobado.");
         email.setSubject("Actualización de estado");
         email.setTo(student.getMail());
-        mailClient.SendEmail(email);
-        studentRepository.UpdateStudentStatus(id,"Aprovado");
+        //mailClient.SendEmail(email);
+        studentRepository.UpdateStudentStatus(student.getId(),"Aprobado");
     }
 
-    public void StudentDeny(Integer id){
+    public void StudentDeny(GetStudentByIdResult student){
 
-        GetStudentByIdResult student = getStudentById(id);
+
+
         Email email = new Email();
         email.setBody("El estudiante " + student.getStudentName() + " " + student.getLastName() + ", ha sido rechazado.");
         email.setSubject("Actualización de estado");
         email.setTo(student.getMail());
-        mailClient.SendEmail(email);
-        studentRepository.UpdateStudentStatus(id,"Rechazado");
+        //mailClient.SendEmail(email);
+        studentRepository.UpdateStudentStatus(student.getId(),"Rechazado");
     }
 
     public void DeleteStudent(int Id){ studentRepository.DeleteStudent(Id);}

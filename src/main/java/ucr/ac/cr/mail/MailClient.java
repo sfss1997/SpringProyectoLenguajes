@@ -15,8 +15,7 @@ public class MailClient {
         final String username = "infoempresarialucr";//change accordingly
         final String password = "nws.2020";//change accordingly
 
-        // Assuming you are sending email through relay.jangosmtp.net
-        String host = "relay.jangosmtp.net";
+        String host = "smtp.gmail.com";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -24,7 +23,6 @@ public class MailClient {
         props.put("mail.smtp.host", host);
         props.put("mail.smtp.port", "25");
 
-        // Get the Session object.
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
@@ -33,25 +31,17 @@ public class MailClient {
                 });
 
         try {
-            // Create a default MimeMessage object.
+
             Message message = new MimeMessage(session);
 
-            // Set From: header field of the header.
             message.setFrom(new InternetAddress(from));
 
-            // Set To: header field of the header.
-            message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(mail.getTo()));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(mail.getTo()));
 
-            // Set Subject: header field
             message.setSubject(mail.getSubject());
 
-            // Send the actual HTML message, as big as you like
-            message.setContent(
-                    mail.getBody(),
-                    "text/html");
+            message.setContent(mail.getBody(),"text/html");
 
-            // Send message
             Transport.send(message);
 
             System.out.println("Sent message successfully....");
