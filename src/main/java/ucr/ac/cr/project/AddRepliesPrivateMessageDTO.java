@@ -3,15 +3,15 @@ package ucr.ac.cr.project;
 public class AddRepliesPrivateMessageDTO {
 
     public int PrivateMessageId;
-    public int StudentId;
-    public int ProfessorId;
+    public Integer StudentId;
+    public Integer ProfessorId;
     public String Motive;
     public String DateTime;
 
     public AddRepliesPrivateMessageDTO() {
     }
 
-    public AddRepliesPrivateMessageDTO(int privateMessageId, int studentId, int professorId, String motive, String dateTime) {
+    public AddRepliesPrivateMessageDTO(int privateMessageId, Integer studentId, Integer professorId, String motive, String dateTime) {
         PrivateMessageId = privateMessageId;
         StudentId = studentId;
         ProfessorId = professorId;
@@ -27,19 +27,19 @@ public class AddRepliesPrivateMessageDTO {
         PrivateMessageId = privateMessageId;
     }
 
-    public int getStudentId() {
+    public Integer getStudentId() {
         return StudentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(Integer studentId) {
         StudentId = studentId;
     }
 
-    public int getProfessorId() {
+    public Integer getProfessorId() {
         return ProfessorId;
     }
 
-    public void setProfessorId(int professorId) {
+    public void setProfessorId(Integer professorId) {
         ProfessorId = professorId;
     }
 

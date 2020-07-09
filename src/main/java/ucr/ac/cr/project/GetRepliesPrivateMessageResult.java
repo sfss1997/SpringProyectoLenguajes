@@ -1,4 +1,6 @@
 package ucr.ac.cr.project;
+import com.sun.istack.Nullable;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,18 +11,20 @@ public class GetRepliesPrivateMessageResult {
     @Column (name = "Private_message_id")
     private int PrivateMessage_id;
     @Column (name = "Student_id")
-    private int Student_id;
+    @Nullable
+    private Integer Student_id;
     @Column (name = "Date_time")
     private String DateTime;
     @Column (name = "Motive")
     private String Motive;
     @Column (name = "Professor_id")
-    private int Professor_id;
+    @Nullable
+    private Integer Professor_id;
 
     public GetRepliesPrivateMessageResult() {
     }
 
-    public GetRepliesPrivateMessageResult(int id, int privateMessage_id, int student_id, String dateTime, String motive, int professor_id) {
+    public GetRepliesPrivateMessageResult(int id, int privateMessage_id, Integer student_id, String dateTime, String motive, Integer professor_id) {
         Id = id;
         PrivateMessage_id = privateMessage_id;
         Student_id = student_id;
@@ -45,11 +49,11 @@ public class GetRepliesPrivateMessageResult {
         PrivateMessage_id = privateMessage_id;
     }
 
-    public int getStudent_id() {
+    public Integer getStudent_id() {
         return Student_id;
     }
 
-    public void setStudent_id(int student_id) {
+    public void setStudent_id(Integer student_id) {
         Student_id = student_id;
     }
 
@@ -69,11 +73,11 @@ public class GetRepliesPrivateMessageResult {
         Motive = motive;
     }
 
-    public int getProfessor_id() {
+    public Integer getProfessor_id() {
         return Professor_id;
     }
 
-    public void setProfessor_id(int professor_id) {
+    public void setProfessor_id(Integer professor_id) {
         Professor_id = professor_id;
     }
 }

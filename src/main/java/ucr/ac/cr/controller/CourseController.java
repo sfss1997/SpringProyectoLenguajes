@@ -67,7 +67,12 @@ public class CourseController {
     }
 
     @GetMapping("/Course/GetPrivateMessage")
-    public List<GetPrivateMessageResult> GetPrivateMessage(@RequestBody GetPrivateMessageDTO PrivateMessage){return service.GetPrivateMessage(PrivateMessage);}
+    public List<GetPrivateMessageResult> GetPrivateMessage(@RequestParam(value = "courseId") Integer courseId, @RequestParam(value = "professorId") Integer professorId){
+        GetPrivateMessageDTO getPrivateMessageDTO = new GetPrivateMessageDTO();
+        getPrivateMessageDTO.setCourseId(courseId);
+        getPrivateMessageDTO.setProfessorId(professorId);
+        return service.GetPrivateMessage(getPrivateMessageDTO);
+    }
 
     @GetMapping("/Course/GetRepliesPublicConsultation")
     public List<GetRepliesPublicConsultationResult> GetRepliesPublicConsultation(@RequestParam(value = "id")Integer PublicConsultationId){return service.GetRepliesPublicConsultation(PublicConsultationId);}
@@ -75,16 +80,25 @@ public class CourseController {
     @GetMapping("/Course/GetRepliesPrivateMessage")
     public List<GetRepliesPrivateMessageResult> GetRepliesPrivateMessage(@RequestParam(value = "id")Integer Id){return service.GetRepliesPrivateMessage(Id);}
 
-    //falta este
     @GetMapping("/Course/GetAppointment")
-    public List<GetAppointmentResult> GetAppointment(@RequestBody GetAppointmentDTO Appointment){return service.GetAppointment(Appointment);}
+    public List<GetAppointmentResult> GetAppointment(@RequestParam(value = "studentId") Integer studentId, @RequestParam(value = "courseId") Integer courseId, @RequestParam(value = "professorId") Integer professorId){
+        GetAppointmentDTO getAppointmentDTO = new GetAppointmentDTO();
+        getAppointmentDTO.setStudentId(studentId);
+        getAppointmentDTO.setCourseId(courseId);
+        getAppointmentDTO.setProfessorId(professorId);
+        return service.GetAppointment(getAppointmentDTO);
+    }
 
     @GetMapping("/Course/GetAppointmentById")
     public List<GetAppointmentResult> GetAppointmentById(@RequestParam(value = "id")Integer Id){return service.GetAppointmentById(Id);}
 
-    //falta este
     @GetMapping("/Course/GetAppointmentProfessor")
-    public List<GetAppointmentResult> GetAppointmentProfessor(@RequestBody GetAppointmentProfessorDTO AppointmentProfessor){return service.GetAppointmentProfessor(AppointmentProfessor);}
+    public List<GetAppointmentResult> GetAppointmentProfessor(@RequestParam(value = "courseId") Integer courseId, @RequestParam(value = "professorId") Integer professorId){
+        GetAppointmentProfessorDTO getAppointmentProfessorDTO = new GetAppointmentProfessorDTO();
+        getAppointmentProfessorDTO.setCourseId(courseId);
+        getAppointmentProfessorDTO.setProfessorId(professorId);
+        return service.GetAppointmentProfessor(getAppointmentProfessorDTO);
+    }
 
 
 }
