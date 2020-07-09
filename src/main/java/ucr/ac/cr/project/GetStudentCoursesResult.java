@@ -37,7 +37,7 @@ public class GetStudentCoursesResult {
         Professor_lastname = professor_lastname;
     }
 
-    @Id
+
     public int getStudent_id() {
         return Student_id;
     }
@@ -54,6 +54,7 @@ public class GetStudentCoursesResult {
         Initials = initials;
     }
 
+    @Id
     public int getCourse_id() {
         return Course_id;
     }

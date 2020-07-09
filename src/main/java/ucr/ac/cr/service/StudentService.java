@@ -13,6 +13,7 @@ import java.util.List;
 @Transactional
 public class StudentService {
 
+
     MailClient mailClient;
     @Autowired
     private StudentRepository studentRepository;
@@ -41,9 +42,7 @@ public class StudentService {
 
     public void UpdateStudent(StudentDTO student){ studentRepository.updateStudent(student.getId(),student.getUsername(),student.getPassword(),student.getIsAdministrator(),student.getStatus(),student.getStudentCard(),student.getStudentName(),student.getLastName(), student.getBirthday(),student.getMail(),student.getImage(),student.getRegistrationStatus(), student.getProvinceId(),student.getCantonId(),student.getDistrictId());}
 
-    public List<SelectStudentResult> ListAllStudents() {
-        return allStudentRepository.ListAllStudents();
-    }
+    public List<SelectStudentResult> ListAllStudents() { return allStudentRepository.ListAllStudents(); }
 
     public GetStudentByIdResult getStudentById(int Id) { return studentByIdRepository.getStudentById(Id); }
 
@@ -61,9 +60,7 @@ public class StudentService {
     }
 
     public void StudentDeny(GetStudentByIdResult student){
-
-
-
+        
         Email email = new Email();
         email.setBody("El estudiante " + student.getStudentName() + " " + student.getLastName() + ", ha sido rechazado.");
         email.setSubject("Actualización de estado");
